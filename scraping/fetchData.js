@@ -21,3 +21,55 @@ async function run() {
 }
 
 run().catch(console.dir);
+
+
+// Example of fetching data in a Next.js component
+useEffect(() => {
+    fetch('/api/anime')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data); // Process your data
+      });
+  }, []);
+  
+
+
+  // components/FetchData.js
+"use client"
+import React, { useEffect, useState } from 'react';
+
+function Anime() {
+  const [anime, setAnime] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('./FetchData')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        console.log(response.json());
+        return response.json();
+      })
+      .then(data => setAnime(data))
+      .catch(err => setError(err.message));
+  }, []);
+
+  if (error) return <div>Error fetching data: {error}</div>;
+  if (!anime) return <div>Loading...</div>;
+
+  return (
+    <div>
+      {/* Render your data here */}
+      <h1>Hello hello {anime}</h1>
+      {/* <p>{anime.description}</p> */}
+      {/* more properties of the anime */}
+    </div>
+  );
+}
+
+export default Anime;
+
+
+// pages/api/anime.js
+
