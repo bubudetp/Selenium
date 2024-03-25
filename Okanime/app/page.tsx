@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Anime from "../component/Anime";
+import Anime from "../pages/[anime]/index";
 
 export default function Home() {
   return (
