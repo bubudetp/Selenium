@@ -1,0 +1,33 @@
+/* styles/Header.module.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 10px 20px;
+    height: 10vh;
+  }
+  
+  .logo {
+    display: flex;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    background-color: var(--dark-gray);
+  }
+  
+  /* Add responsive styling as necessary */
+  

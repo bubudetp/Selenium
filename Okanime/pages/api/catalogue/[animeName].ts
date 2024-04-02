@@ -8,24 +8,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     await client.connect();
     const db = client.db('Anime');
-    const { index } = req.query;
-    const num = parseInt(index, 10); // Ensure base 10
+    const { animeName } = req.query;
 
-    if (isNaN(num)) {
+    console.log('animename', animeName)
+
+    if (animeName === undefined) {
       res.status(400).json({ message: 'Invalid index provided.' });
       return;
     }
 
-    console.log()
     const collection = db.collection('AnimeList');
-    const anime = await collection.findOne({ name: "Chainsaw Man" });
+    const anime = await collection.findOne({ name: animeName });
 
-    if (!anime || !anime.iframes || num < 0 || num >= anime.iframes.length) {
+    if (!anime || !anime.iframes) {
       res.status(404).json({ message: 'Episode not found' });
       return;
     }
 
-    const episode = anime.iframes[num];
+    const episode = anime.iframes;
+    console.log('animename', episode)
     res.status(200).json(episode);
   } catch (e) {
     res.status(500).json({ message: e.message });

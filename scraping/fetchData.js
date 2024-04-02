@@ -1,6 +1,5 @@
 const { MongoClient } = require('mongodb');
 
-// Replace the URI string with your connection string.
 const uri = "mongodb+srv://burak:ZeffVnP97WkwgYB4@anime.ftfv2.mongodb.net/";
 const client = new MongoClient(uri);
 
@@ -23,18 +22,16 @@ async function run() {
 run().catch(console.dir);
 
 
-// Example of fetching data in a Next.js component
 useEffect(() => {
     fetch('/api/anime')
       .then(res => res.json())
       .then(data => {
-        console.log(data); // Process your data
+        console.log(data); 
       });
   }, []);
   
 
 
-  // components/FetchData.js
 "use client"
 import React, { useEffect, useState } from 'react';
 
