@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import undetected_chromedriver as uc
+import sys
 import time
 import config
 import re
@@ -12,6 +13,7 @@ import time
 import random
 import requests
 import json 
+import os
 
 def rand_proxy():
     proxy_details = random.choice(config.ips)
@@ -151,11 +153,21 @@ def get_video_url(driver, url):
 
     return link.get_attribute("value")
 
+
 def save_data_to_json(file_path, data):
+    existing_data = {}
+
+    if os.path.isfile(file_path) and os.path.getsize(file_path) > 0:
+        with open(file_path, 'r') as file:
+            existing_data = json.load(file)
+
+    existing_data.update(data)
+
     with open(file_path, 'w') as file:
-        json.dump(data, file, indent=4)
+        json.dump(existing_data, file, indent=4)
 
-
+def check_space(text):
+    return text.replace('%20', ' ')
 
 def get_anime(anime_name, driver, actions):
 
@@ -219,24 +231,37 @@ try:
         actions.perform()
         human_like_delay(short=True)
 
-    human_like_delay()
-    search_box = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.ID, "top_search_main_input"))
-    )
+    # human_like_delay()
+    # search_box = WebDriverWait(driver, 10).until(
+    #     EC.element_to_be_clickable((By.ID, "top_search_main_input"))
+    # )
     
-    actions.move_to_element(search_box).click().perform()
-    human_like_delay(short=True)
+    # actions.move_to_element(search_box).click().perform()
+    # human_like_delay(short=True)
 
-    anime_name = 'One Piece'
 
-    if get_anime(anime_name, driver, actions):
-        td_elements = driver.find_elements(By.CSS_SELECTOR, 'td.text')
-        video_urls = get_videos(anime_name, td_elements)
+    anime_names = sys.argv[1:]
 
-        save_data_to_json('data.json', video_urls)
-        end = time.time()
-        elapsed = (end - start) / 60
-        print('(time taken)', elapsed)
+    anime_names = [check_space(anime_name) for anime_name in anime_names]
+
+    
+    for anime_name in anime_names:
+        search_box = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "top_search_main_input"))
+        )
+    
+        actions.move_to_element(search_box).click().perform()
+        human_like_delay(short=True)
+
+        if get_anime(anime_name, driver, actions):
+            print('anime_name', anime_name)
+            td_elements = driver.find_elements(By.CSS_SELECTOR, 'td.text')
+            video_urls = get_videos(anime_name, td_elements)
+
+            save_data_to_json('data.json', video_urls)
+            end = time.time()
+            elapsed = (end - start) / 60
+            print('(time taken)', elapsed)
 
 finally:
     driver.quit()

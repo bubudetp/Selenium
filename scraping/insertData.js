@@ -10,7 +10,7 @@ async function run(){
         const database = client.db('Anime');
         const collection = database.collection('AnimeList');
         
-        const fileRead = fs.readFileSync('Animes.json');
+        const fileRead = fs.readFileSync('data.json');
         const videos = JSON.parse(fileRead);
 
         const documents = Object.keys(videos).map(key => ({

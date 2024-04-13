@@ -1,0 +1,8 @@
+.homepage_container{
+    background-image: url(https://i.redd.it/4fnso13fvgd71.gif);
+    /* background-color: black; */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

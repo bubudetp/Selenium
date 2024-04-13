@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import styles from '../../../styles/Lecture.module.css';
 
 function Anime() {
   const [anime, setAnime] = useState(null);
@@ -44,10 +45,7 @@ function Anime() {
   }
 
   return (
-    <div>
-
-        <p>hey</p>
-      {/* <h1>Hello hello {anime.name}{console.log(anime)}</h1> */}
+    <div className={styles.lecture_container}>
       <div className="dropdown"> 
         <select value={selectedEpisode} onChange={handleEpisodeChange}> 
           {reversedSrc.map((episodeUrl, index) => ( <option key={index} value={episodeUrl}> Episode {reversedSrc.length - index} </option> ))} 
