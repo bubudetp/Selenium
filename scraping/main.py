@@ -96,9 +96,9 @@ def handle_bot(driver):
 
 
 def get_url(td_elements):
-
     video_urls = {}
     pattern = re.compile(r'Saison (\d+) Episode (\d+)')
+    pattern1 = re.compile(r'Episode (\d+)')
 
     for td in td_elements:
         link = td.find_element(By.CSS_SELECTOR, 'a')
@@ -117,14 +117,22 @@ def get_url(td_elements):
                 "link": href
             }
         else:
-            print("not matched")
+            match1 = pattern1.search(desc[0])
+            if match1:
+                episode_number = int(match1.group(1))
+                if 1 not in video_urls:
+                    video_urls[1] = {}
+                video_urls[1][episode_number] = {
+                    "episode_number": episode_number,
+                    "link": href
+                }
+            else:
+                print("not matched")
 
     sorted_video_urls = {season: {ep: video_urls[season][ep] for ep in sorted(video_urls[season])}
                          for season in sorted(video_urls)}
-    
 
     print('sorted', sorted_video_urls)
-    
     return sorted_video_urls
 
 
@@ -134,11 +142,11 @@ def get_videos(anime_name, td_elements):
 
     video_urls = {anime_name: {}}
     for season, episodes in dic.items():
-        video_urls[anime_name][season] = {}  # Initialize the season dictionary if not already present
+        video_urls[anime_name][season] = {}
         for episode, episode_data in episodes.items():
             print(f"Season: {season} Episode: {episode} Link: {episode_data['link']}")
             video_url = get_video_url(driver, episode_data['link'])
-            video_urls[anime_name][season][episode] = video_url  # Assign the URL to the specific episode
+            video_urls[anime_name][season][episode] = video_url
     
     return video_urls
 
@@ -259,9 +267,11 @@ try:
             video_urls = get_videos(anime_name, td_elements)
 
             save_data_to_json('data.json', video_urls)
-            end = time.time()
-            elapsed = (end - start) / 60
-            print('(time taken)', elapsed)
+            print('Data saved')
+
+    end = time.time()
+    elapsed = (end - start) / 60
+    print('(time taken)', elapsed)
 
 finally:
     driver.quit()
