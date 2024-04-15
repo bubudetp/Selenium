@@ -1,32 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
-function VideoPlayer({ anime, selectedSeason, selectedEpisode, setSelectedEpisode, setSelectedSeason, selectedSeasonEpisodes }) {
-  const [src, setSrc] = useState([]);
-  const [firstEpisode, setFirstEpisode] = useState('');
+function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selectedEpisode, setSelectedEpisode, setSelectedSeason, selectedSeasonEpisodes }) {
 
-  useEffect(() => {
-    if (selectedSeasonEpisodes) {
-        setSelectedEpisode(1);
-        }
-  }, [])
 
-  useEffect(() => {
-    if (selectedSeasonEpisodes) {
-      let videoUrls = selectedSeasonEpisodes.map(episode => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(episode, 'text/html');
-        const iframe = doc.querySelector('iframe');
-        return iframe ? iframe.getAttribute('src') : null;
-      }).filter(url => url !== null);
-      setSrc(videoUrls);
-      setFirstEpisode(videoUrls[0]);
-    }
-  }, [selectedSeasonEpisodes])
-
+  
   const handleEpisodeChange = (e) => {
+    const newEpisodeIndex = e.target.selectedIndex;
     setSelectedEpisode(e.target.value);
-    console.log(selectedSeasonEpisodes[0])
-  }
+    setSrc(prevSrc => {
+      const newSrc = [...prevSrc];
+      newSrc[selectedSeasonEpisodes.indexOf(e.target.value)] = src[newEpisodeIndex];
+      return newSrc;
+    });
+  };
 
   const handleSeasonChange = (e) => {
     setSelectedSeason(e.target.value);
@@ -40,7 +26,7 @@ function VideoPlayer({ anime, selectedSeason, selectedEpisode, setSelectedEpisod
             <select name="" id="" className="w-1/6 rounded h-8 bg-custom-blue" value={selectedEpisode} onChange={handleEpisodeChange}>
               {src.map((videoUrl, index) => (
                 <option key={index} value={videoUrl}>
-                  Episode {index + 1}
+                  EPISODE {index + 1}
                 </option>
               ))}
             </select>
@@ -51,7 +37,14 @@ function VideoPlayer({ anime, selectedSeason, selectedEpisode, setSelectedEpisod
           </div>
           <div className="flex justify-center items-center w-auto h-200">
             <div className="w-[1112px] h-[620px]">
-              <iframe className="w-full h-full" src={selectedEpisode} allowFullScreen></iframe>
+            <iframe
+              className="w-full h-full"
+              src={
+                src[selectedSeasonEpisodes.indexOf(selectedEpisode)] ||
+                (selectedSeasonEpisodes.length > 0 ? src[0] : "")
+              }
+              allowFullScreen
+            ></iframe>
             </div>
           </div>
         </div>
