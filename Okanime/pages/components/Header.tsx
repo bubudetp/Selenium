@@ -1,11 +1,26 @@
 // components/Header.js
+import {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {useRouter} from 'next/navigation'
 import "../globals.css";
 
 const Header = () => {
+
+  const router = useRouter();
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputSubmit = (e) => {
+    if (e.key === 'Enter'){
+      router.push(`/catalogue/${inputValue}`)
+    }
+  }
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value)
+  }
+
   return (
-    <header className=" border-b border-gray-400 h-100 font-sans font-extrabold bg-custom-brown text-white">
+    <header className=" border-b border-gray-400 h-100 font-sans font-extrabold bg-custom-blue text-white">
       <div className="flex justify-between ml-4 mr-20">
         <div className="flex items-center">
             <Image
@@ -18,11 +33,18 @@ const Header = () => {
 
         </div>
         <div className="flex row items-center gap-x-8">
+          <input
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleInputSubmit}
+              className="text-black font-normal"
+            />
           <Link href="/catalogue">CATALOGUE</Link>
           <Link href="/planning">PLANNING</Link>
           <Link href="/help">AIDE</Link>
           <Link href="/profil">PROFIL</Link>
-          
+
         </div>
       </div>
     </header>
