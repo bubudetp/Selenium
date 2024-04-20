@@ -2,8 +2,10 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from collections import defaultdict
 import undetected_chromedriver as uc
 import sys
 import time
@@ -37,7 +39,7 @@ chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
-# chrome_options.page_load_strategy = 'eager'
+chrome_options.page_load_strategy = 'eager'
 
 proxy = rand_proxy()
 
@@ -94,6 +96,70 @@ def handle_bot(driver):
         print("No bot challenge detected, proceeding.")
 
 
+def get_full_page(driver, url):
+    driver.get(url)
+    print('page loaded')
+
+    driver.execute_script("document.body.style.zoom=1.0;this.blur()")
+
+    title = driver.find_element(By.CSS_SELECTOR, 'h1').text
+
+    data = defaultdict(dict) 
+    try:
+        with open('data.json', 'r') as f:
+            data.update(json.load(f))
+    except FileNotFoundError:
+        pass
+
+    if title in data:
+        existing_nums = set(map(int, data[title].keys()))
+        next_num = max(existing_nums) + 1
+    else:
+        next_num = 1
+
+    # selector = driver.find_element(By.CSS_SELECTOR, 'div.view_tab_sel')
+    # selector.click()
+
+    # selc = driver.find_element(By.CSS_SELECTOR, 'div.view_tab')
+    # child_divs = selc.find_elements(By.CSS_SELECTOR, 'div')
+
+    # if len(child_divs) >= 3:
+    #     third_div = child_divs[1]
+    #     if third_div.is_displayed():
+    #         link = third_div.find_element(By.TAG_NAME, 'a')
+    #         link.click()
+    #     else:
+    #         print("Third div is not visible.")
+    # else:
+    #     print("Not enough child <div> elements found.")
+
+    handle_bot(driver)
+
+    wait = WebDriverWait(driver, 2)
+    lazy_loaded_images = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'img.lazyloaded')))
+
+    base_requests = []
+    for element in lazy_loaded_images:
+        data_src = element.get_attribute('data-src')
+        video_number = data_src.split('/')[-1].split('_')[1]
+        base_request = f"""<iframe width="640" height="384" src="https://video.sibnet.ru/shell.php?videoid={video_number}" frameborder="0" scrolling="no" allowfullscreen></iframe>"""
+        base_requests.append(base_request)
+
+    base_requests.reverse()
+    video_dicto = {str(next_num + i): base_request for i, base_request in enumerate(base_requests)}
+
+    if title in data:
+        existing_nums = set(map(int, data[title].keys()))
+        next_num = max(existing_nums) + 1
+        video_dicto = {str(next_num + i): base_request for i, base_request in enumerate(base_requests)}
+        data[title].update(video_dicto)
+    else:
+        data[title] = video_dicto
+
+    with open('data.json', 'w') as f:
+        json.dump(data, f, indent=4)
+
+    return data
 
 def get_url(td_elements):
     video_urls = {}
@@ -248,26 +314,33 @@ try:
     # human_like_delay(short=True)
 
 
-    anime_names = sys.argv[1:]
+    # anime_names = sys.argv[1:]
 
-    anime_names = [check_space(anime_name) for anime_name in anime_names]
+    # anime_names = [check_space(anime_name) for anime_name in anime_names]
 
+
+    video_num = get_full_page(driver, 'https://video.sibnet.ru/alb690128-Kono_Subarashii_Sekai_ni_Bakuen_wo/')
+    print(video_num)
+
+    # save_data_to_json('data.json', video_num)
+
+
+    # for anime_name in anime_names:
+    #     search_box = WebDriverWait(driver, 10).until(
+    #         EC.element_to_be_clickable((By.ID, "top_search_main_input"))
+    #     )
     
-    for anime_name in anime_names:
-        search_box = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "top_search_main_input"))
-        )
-    
-        actions.move_to_element(search_box).click().perform()
-        human_like_delay(short=True)
+    #     actions.move_to_element(search_box).click().perform()
+    #     human_like_delay(short=True)
 
-        if get_anime(anime_name, driver, actions):
-            print('anime_name', anime_name)
-            td_elements = driver.find_elements(By.CSS_SELECTOR, 'td.text')
-            video_urls = get_videos(anime_name, td_elements)
 
-            save_data_to_json('data.json', video_urls)
-            print('Data saved')
+        # if get_anime(anime_name, driver, actions):
+            # print('anime_name', anime_name)
+            # td_elements = driver.find_elements(By.CSS_SELECTOR, 'td.text')
+            # video_urls = get_videos(anime_name, td_elements)
+
+            # save_data_to_json('data.json', video_urls)
+            # print('Data saved')
 
     end = time.time()
     elapsed = (end - start) / 60
@@ -275,9 +348,3 @@ try:
 
 finally:
     driver.quit()
-
-
-
-
-
-
