@@ -96,51 +96,25 @@ def handle_bot(driver):
         print("No bot challenge detected, proceeding.")
 
 
-def get_full_page(driver, url):
+def get_full_page(driver, url, season=None):
     driver.get(url)
     print('page loaded')
-
-    driver.execute_script("document.body.style.zoom=1.0;this.blur()")
-
     title = driver.find_element(By.CSS_SELECTOR, 'h1').text
 
-    data = defaultdict(dict) 
+    driver.execute_script("0, document.body.scrollHeight")
+
+    data = defaultdict(dict)
     try:
         with open('data.json', 'r') as f:
             data.update(json.load(f))
     except FileNotFoundError:
         pass
 
-    if title in data:
-        existing_nums = set(map(int, data[title].keys()))
-        next_num = max(existing_nums) + 1
-    else:
-        next_num = 1
-
-    # selector = driver.find_element(By.CSS_SELECTOR, 'div.view_tab_sel')
-    # selector.click()
-
-    # selc = driver.find_element(By.CSS_SELECTOR, 'div.view_tab')
-    # child_divs = selc.find_elements(By.CSS_SELECTOR, 'div')
-
-    # if len(child_divs) >= 3:
-    #     third_div = child_divs[1]
-    #     if third_div.is_displayed():
-    #         link = third_div.find_element(By.TAG_NAME, 'a')
-    #         link.click()
-    #     else:
-    #         print("Third div is not visible.")
-    # else:
-    #     print("Not enough child <div> elements found.")
-
     handle_bot(driver)
-
     wait = WebDriverWait(driver, 2)
-
     lazy_loaded_images = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'img.lazyloaded')))
 
     base_requests = []
-
     for element in lazy_loaded_images:
         data_src = element.get_attribute('data-src')
         video_number = data_src.split('/')[-1].split('_')[1]
@@ -150,12 +124,23 @@ def get_full_page(driver, url):
     base_requests.reverse()
 
     if title in data:
-        existing_seasons = set(map(int, data[title].keys()))
-        next_season = max(existing_seasons) + 1
-        video_dicto = {str(i + 1): base_request for i, base_request in enumerate(base_requests)}
-        data[title][str(next_season)] = video_dicto
+        if season is not None:
+            next_season = season
+        else:
+            existing_seasons = set(map(int, data[title].keys()))
+            next_season = max(existing_seasons) + 1
+
+        if str(next_season) not in data[title]:
+            data[title][str(next_season)] = {}
+
+        existing_episodes = set(map(int, data[title][str(next_season)].keys()))
+        next_episode = max(existing_episodes) + 1 if existing_episodes else 1
+
+        for i, base_request in enumerate(base_requests, start=next_episode):
+            if str(i) not in data[title][str(next_season)]:
+                data[title][str(next_season)][str(i)] = base_request
     else:
-        video_dicto = {str(i + 1): base_request for i, base_request in enumerate(base_requests)}
+        video_dicto = {str(i+1): base_request for i, base_request in enumerate(base_requests)}
         data[title] = {'1': video_dicto}
 
     with open('data.json', 'w') as f:
@@ -316,12 +301,8 @@ try:
     # human_like_delay(short=True)
 
 
-    # anime_names = sys.argv[1:]
 
-    # anime_names = [check_space(anime_name) for anime_name in anime_names]
-
-
-    video_num = get_full_page(driver, 'https://video.sibnet.ru/alb683744-Fuufu_Ijou__Koibito_Miman/')
+    video_num = get_full_page(driver, "https://video.sibnet.ru/alb667525-OxxxP/&page=1/", 1)
     print(video_num)
 
     # save_data_to_json('data.json', video_num)

@@ -21,6 +21,9 @@ async function run(){
           const result = await collection.insertMany(documents);
           console.log(`${result.insertedCount} documents were inserted`);
 
+          fs.writeFileSync('data.json', '{}');
+          console.log('JSON file emptied');
+
     }finally{
         await client.close();
     }
