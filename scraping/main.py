@@ -136,9 +136,11 @@ def get_full_page(driver, url):
     handle_bot(driver)
 
     wait = WebDriverWait(driver, 2)
+
     lazy_loaded_images = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'img.lazyloaded')))
 
     base_requests = []
+
     for element in lazy_loaded_images:
         data_src = element.get_attribute('data-src')
         video_number = data_src.split('/')[-1].split('_')[1]
@@ -146,15 +148,15 @@ def get_full_page(driver, url):
         base_requests.append(base_request)
 
     base_requests.reverse()
-    video_dicto = {str(next_num + i): base_request for i, base_request in enumerate(base_requests)}
 
     if title in data:
-        existing_nums = set(map(int, data[title].keys()))
-        next_num = max(existing_nums) + 1
-        video_dicto = {str(next_num + i): base_request for i, base_request in enumerate(base_requests)}
-        data[title].update(video_dicto)
+        existing_seasons = set(map(int, data[title].keys()))
+        next_season = max(existing_seasons) + 1
+        video_dicto = {str(i + 1): base_request for i, base_request in enumerate(base_requests)}
+        data[title][str(next_season)] = video_dicto
     else:
-        data[title] = video_dicto
+        video_dicto = {str(i + 1): base_request for i, base_request in enumerate(base_requests)}
+        data[title] = {'1': video_dicto}
 
     with open('data.json', 'w') as f:
         json.dump(data, f, indent=4)
@@ -319,7 +321,7 @@ try:
     # anime_names = [check_space(anime_name) for anime_name in anime_names]
 
 
-    video_num = get_full_page(driver, 'https://video.sibnet.ru/alb690128-Kono_Subarashii_Sekai_ni_Bakuen_wo/')
+    video_num = get_full_page(driver, 'https://video.sibnet.ru/alb683744-Fuufu_Ijou__Koibito_Miman/')
     print(video_num)
 
     # save_data_to_json('data.json', video_num)
