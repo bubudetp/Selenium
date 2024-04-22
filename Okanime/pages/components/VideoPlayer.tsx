@@ -39,29 +39,57 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
 
 
   const handleNextEpisodeOnClick = () => {
+    const nextButton = document.getElementById('next_ep');
+    const prevButton = document.getElementById('prev_ep');
     const currentEpisodeIndex = selectedSeasonEpisodes.indexOf(selectedEpisode);
-    console.log(selectedSeasonEpisodes)
-    console.log('selectedEpisode', selectedEpisode)
-    console.log('currentEpisode', currentEpisodeIndex)
     const nextEpisodeIndex = currentEpisodeIndex + 1;
-    console.log('nextEpisode', nextEpisodeIndex)
 
     if (nextEpisodeIndex < selectedSeasonEpisodes.length) {
       setSelectedEpisode(selectedSeasonEpisodes[nextEpisodeIndex]);
       const episodeSelector = document.getElementById('episode_selector') as HTMLSelectElement;
       episodeSelector.selectedIndex = nextEpisodeIndex;
       console.log('episodeSelector', episodeSelector.selectedIndex);
+    }
+
+    if(nextEpisodeIndex == selectedSeasonEpisodes.length - 1){
+      prevButton.style.display = 'block';
+      nextButton.style.display = 'none';
 
     }
+    else if(nextEpisodeIndex == 0){
+      nextButton.style.display = 'block';
+      prevButton.style.display = 'none';
+    }
+    else if(nextEpisodeIndex > 0 && nextEpisodeIndex < selectedSeasonEpisodes.length - 1){
+      nextButton.style.display = 'block';
+      prevButton.style.display = 'block';
+    }
+
   };
 
   const handlePrevEpisodeOnClick = () => {
+    const nextButton = document.getElementById('next_ep');
+    const prevButton = document.getElementById('prev_ep');
     const currentEpisodeIndex = selectedSeasonEpisodes.indexOf(selectedEpisode);
     const prevEpisodeIndex = currentEpisodeIndex - 1;
     if (prevEpisodeIndex >= 0) {
       setSelectedEpisode(selectedSeasonEpisodes[prevEpisodeIndex]);
       const episodeSelector = document.getElementById('episode_selector') as HTMLSelectElement;
       episodeSelector.selectedIndex = prevEpisodeIndex;
+    }
+
+    if(prevEpisodeIndex == selectedSeasonEpisodes.length - 1){
+      prevButton.style.display = 'block';
+      nextButton.style.display = 'none';
+
+    }
+    else if(prevEpisodeIndex == 0){
+      nextButton.style.display = 'block';
+      prevButton.style.display = 'none';
+    }
+    else if(prevEpisodeIndex > 0 && prevEpisodeIndex < selectedSeasonEpisodes.length - 1){
+      nextButton.style.display = 'block';
+      prevButton.style.display = 'block';
     }
   }
 
