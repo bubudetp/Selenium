@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import "../../globals.css"
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import VideoPlayer from '../../components/VideoPlayer';
 
 function Anime() {
@@ -72,6 +73,7 @@ function Anime() {
           selectedSeasonEpisodes={selectedSeasonEpisodes}
         />
       </div>
+      <Footer/>
     </div>
   );
 }
