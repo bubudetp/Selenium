@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selectedEpisode, setSelectedEpisode, setSelectedSeason, selectedSeasonEpisodes }) {
 
-
   
   const handleEpisodeChange = (e) => {
     const newEpisodeIndex = e.target.selectedIndex;
@@ -12,10 +11,53 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
       newSrc[selectedSeasonEpisodes.indexOf(e.target.value)] = src[newEpisodeIndex];
       return newSrc;
     });
+
+    if(newEpisodeIndex == selectedSeasonEpisodes.length - 1){
+      const nextButton = document.getElementById('next_ep');
+      const prevButton = document.getElementById('prev_ep');
+      prevButton.style.display = 'block';
+      nextButton.style.display = 'none';
+
+    }
+    else if(newEpisodeIndex == 0){
+      const prevButton = document.getElementById('prev_ep');
+      const nextButton = document.getElementById('next_ep');
+      nextButton.style.display = 'block';
+      prevButton.style.display = 'none';
+    }
+    else if(newEpisodeIndex > 0 && newEpisodeIndex < selectedSeasonEpisodes.length - 1){
+      const prevButton = document.getElementById('prev_ep');
+      const nextButton = document.getElementById('next_ep');
+      nextButton.style.display = 'block';
+      prevButton.style.display = 'block';
+    }
   };
 
   const handleSeasonChange = (e) => {
     setSelectedSeason(e.target.value);
+  }
+
+
+  const handleNextEpisodeOnClick = () => {
+    const currentEpisodeIndex = selectedSeasonEpisodes.indexOf(selectedEpisode);
+    const nextEpisodeIndex = currentEpisodeIndex + 1;
+    if (nextEpisodeIndex < selectedSeasonEpisodes.length) {
+      setSelectedEpisode(selectedSeasonEpisodes[nextEpisodeIndex]);
+      const episodeSelector = document.getElementById('episode_selector') as HTMLSelectElement;
+      episodeSelector.selectedIndex = nextEpisodeIndex;
+      console.log('episodeSelector', episodeSelector.selectedIndex);
+
+    }
+  };
+
+  const handlePrevEpisodeOnClick = () => {
+    const currentEpisodeIndex = selectedSeasonEpisodes.indexOf(selectedEpisode);
+    const prevEpisodeIndex = currentEpisodeIndex - 1;
+    if (prevEpisodeIndex >= 0) {
+      setSelectedEpisode(selectedSeasonEpisodes[prevEpisodeIndex]);
+      const episodeSelector = document.getElementById('episode_selector') as HTMLSelectElement;
+      episodeSelector.selectedIndex = prevEpisodeIndex;
+    }
   }
 
   return (
@@ -23,7 +65,7 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
       <div className="relative w-full h-screen flex justify-center items-center text-white">
         <div className="video-container flex flex-col h-30 w-[2000px]">
           <div className="ml-10">
-            <select name="" id="" className="w-1/6 rounded h-8 bg-custom-blue" value={selectedEpisode} onChange={handleEpisodeChange}>
+            <select name="" id="episode_selector" className="w-1/6 rounded h-8 bg-custom-blue" value={selectedEpisode} onChange={handleEpisodeChange}>
               {src.map((videoUrl, index) => (
                 <option key={index} value={videoUrl}>
                   EPISODE {index + 1}
@@ -32,8 +74,8 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
             </select>
           </div>
           <div className="flex justify-center items-center h-20 gap-5">
-            <button name="" id="" className="w-1/6 rounded h-1/2 bg-custom-blue">PREVIOUS EPISODE</button>
-            <button name="" id="" className="w-1/6 rounded h-1/2 bg-custom-blue">NEXT EPISODE</button>
+            <button name="" id="prev_ep" className="w-1/6 rounded h-1/2 bg-custom-blue" onClick={handlePrevEpisodeOnClick}>PREVIOUS EPISODE</button>
+            <button name="" id="next_ep" className="w-1/6 rounded h-1/2 bg-custom-blue" onClick={handleNextEpisodeOnClick}>NEXT EPISODE</button>
           </div>
           <div className="flex justify-center items-center w-auto h-200">
             <div className="w-[1112px] h-[620px]">
