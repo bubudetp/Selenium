@@ -5,7 +5,7 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
   
   const handleEpisodeChange = (e) => {
     const newEpisodeIndex = e.target.selectedIndex;
-    setSelectedEpisode(e.target.value);
+    setSelectedEpisode(selectedSeasonEpisodes[newEpisodeIndex]);
     setSrc(prevSrc => {
       const newSrc = [...prevSrc];
       newSrc[selectedSeasonEpisodes.indexOf(e.target.value)] = src[newEpisodeIndex];
@@ -40,7 +40,12 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
 
   const handleNextEpisodeOnClick = () => {
     const currentEpisodeIndex = selectedSeasonEpisodes.indexOf(selectedEpisode);
+    console.log(selectedSeasonEpisodes)
+    console.log('selectedEpisode', selectedEpisode)
+    console.log('currentEpisode', currentEpisodeIndex)
     const nextEpisodeIndex = currentEpisodeIndex + 1;
+    console.log('nextEpisode', nextEpisodeIndex)
+
     if (nextEpisodeIndex < selectedSeasonEpisodes.length) {
       setSelectedEpisode(selectedSeasonEpisodes[nextEpisodeIndex]);
       const episodeSelector = document.getElementById('episode_selector') as HTMLSelectElement;
@@ -66,7 +71,7 @@ function VideoPlayer({ anime, firstEpisode, src, setSrc, selectedSeason, selecte
         <div className="video-container flex flex-col h-30 w-[2000px]">
           <div className="ml-10">
             <select name="" id="episode_selector" className="w-1/6 rounded h-8 bg-custom-blue" value={selectedEpisode} onChange={handleEpisodeChange}>
-              {src.map((videoUrl, index) => (
+              {selectedSeasonEpisodes.map((videoUrl, index) => (
                 <option key={index} value={videoUrl}>
                   EPISODE {index + 1}
                 </option>
