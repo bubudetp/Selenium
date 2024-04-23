@@ -9,7 +9,7 @@ function Footer() {
         <div className="flex flex-col gap-2">
             <div className="flex flex-row gap-10 mr-20 ml-10">
                 <div className="flex flex-col gap-5 mt-10">
-                    <p>WHO ARE WE ?</p>
+                    <p>WHO ARE WE?</p>
                     <p>Okanime is your favorite catalogue with the least ads possible that <br></br>is created by animation passionates and APAC diverstissement.</p>
                 </div>
                 <div className="flex gap-10 h-44 mt-10">
@@ -25,7 +25,6 @@ function Footer() {
                 </div>
             </div>
         </div>
-
     </footer>
   )
 }
