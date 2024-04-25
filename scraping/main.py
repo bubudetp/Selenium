@@ -96,6 +96,59 @@ def handle_bot(driver):
         print("No bot challenge detected, proceeding.")
 
 
+def get_full_page_from_personal_playlist(driver, url, season=None):
+    driver.get(url)
+    print('page loaded')
+    title = driver.find_element(By.CSS_SELECTOR, 'div.playlist_info__content_name').text
+    print(title)
+
+    driver.execute_script("0, document.body.scrollHeight")
+
+    data = defaultdict(dict)
+    try:
+        with open('data.json', 'r') as f:
+            data.update(json.load(f))
+    except FileNotFoundError:
+        pass
+
+    handle_bot(driver)
+    wait = WebDriverWait(driver, 2)
+    lazy_loaded_images = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'img.playlist_item__cover_img')))
+
+    print(lazy_loaded_images)
+
+    base_requests = []
+    for element in lazy_loaded_images:
+        src = element.get_attribute('src')
+        video_number = src.split('/')[-1].split('_')[1]
+        base_request = f"""<iframe width="640" height="384" src="https://video.sibnet.ru/shell.php?videoid={video_number}" frameborder="0" scrolling="no" allowfullscreen></iframe>"""
+        base_requests.append(base_request)
+
+    if title in data:
+        if season is not None:
+            next_season = season
+        else:
+            existing_seasons = set(map(int, data[title].keys()))
+            next_season = max(existing_seasons) + 1
+
+        if str(next_season) not in data[title]:
+            data[title][str(next_season)] = {}
+
+        existing_episodes = set(map(int, data[title][str(next_season)].keys()))
+        next_episode = max(existing_episodes) + 1 if existing_episodes else 1
+
+        for i, base_request in enumerate(base_requests, start=next_episode):
+            if str(i) not in data[title][str(next_season)]:
+                data[title][str(next_season)][str(i)] = base_request
+    else:
+        video_dicto = {str(i+1): base_request for i, base_request in enumerate(base_requests)}
+        data[title] = {'1': video_dicto}
+
+    with open('data.json', 'w') as f:
+        json.dump(data, f, indent=4)
+
+    return data
+
 def get_full_page(driver, url, season=None):
     driver.get(url)
     print('page loaded')
@@ -302,7 +355,8 @@ try:
 
 
 
-    video_num = get_full_page(driver, "https://video.sibnet.ru/alb667525-OxxxP/&page=1/", 1)
+    # video_num = get_full_page(driver, "https://video.sibnet.ru/alb678360-Mushoku/", 1)
+    video_num = get_full_page_from_personal_playlist(driver, "https://video.sibnet.ru/pls698428/", 1)
     print(video_num)
 
     # save_data_to_json('data.json', video_num)
