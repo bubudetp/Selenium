@@ -39,7 +39,7 @@ export const GlobalContextProvider = ({children}) => {
 
     const getPopularAnime = async () => {
         dispatch({type: LOADING});
-        const response = await fetch(`${baseUrl}/top/anime?filter=bypopularity`);
+        const response = await fetch(`${baseUrl}/anime/schedules`);
         const data = await response.json();
         dispatch({type: GET_POPULAR_ANIME, payload: data.data});
     }
@@ -50,6 +50,7 @@ export const GlobalContextProvider = ({children}) => {
     return (
         <GlobalContext.Provider value={{
             ...state
+            
         }}>
             {children}
         </GlobalContext.Provider>
