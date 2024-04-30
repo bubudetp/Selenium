@@ -16,19 +16,19 @@ function Home() {
   const conditionalRender = () => {
     if(!isSearch){
       console.log(popularAnime)
-      // return popularAnime.map((anime) => {
-      //   console.log(anime)
-      //   // return <Link href={`${anime.mal_id}`} key={anime.mal_id}>
-      //     {/* <img src={anime.images.jpg.large_image_url} alt="" /> */}
-      //   {/* </Link> */}
-      // })
+      return popularAnime.map((anime) => {
+        console.log(anime)
+        // return <Link href={`${anime.mal_id}`} key={anime.mal_id}>
+          {/* <img src={anime.images.jpg.large_image_url} alt="" /> */}
+        {/* </Link> */}
+      })
     }
   }
   return (
     <div className={styles.homepage_container}>
       <Header />
       <div className="pop-anime">
-        {conditionalRender()}
+        {/* {conditionalRender()} */}
       </div>
     </div>
   )

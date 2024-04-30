@@ -35,6 +35,7 @@ export const GlobalContextProvider = ({children}) => {
         loading: false,
     }
 
+    
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const getPopularAnime = async () => {
