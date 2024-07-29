@@ -55,7 +55,7 @@ def process_genres_and_themes(anime, metadata_lists):
                     anime["nautiljon_data"][field_name] = translated_texts
 
 def get_description(anime, driver):
-    text = driver.find_element(By.CSS_SELECTOR, "div.description")
+    text = driver.find_element(By.CLASS_NAME, "description")
     anime["nautiljon_data"]["synopsis"] = [text.text]
     print(text.text, "odpoifdopfk[paosfkp[oasedk[p]]]")
 
@@ -64,13 +64,15 @@ def scrape_anime_names(anime_name):
         formatted_anime_name = split_string_by_add(anime_name)
         driver.get("https://www.nautiljon.com/animes/" + formatted_anime_name + ".html")
         anime = {"name": anime_name, "nautiljon_data": {}}
+
+        synopsis = driver.find_element(By.CLASS_NAME, "description")
+        anime["nautiljon_data"]["synopsis"] = [synopsis.text]
         
         time.sleep(2)
         
         metadata_lists_container = driver.find_element(By.CSS_SELECTOR, "ul.mb10")
         metadata_lists = metadata_lists_container.find_elements(By.TAG_NAME, "li")
-        synopsis = driver.find_element(By.CSS_SELECTOR, "div.description")
-        anime["nautiljon_data"]["synopsis"] = [synopsis.text]
+
 
         process_genres_and_themes(anime, metadata_lists)
 
@@ -141,6 +143,7 @@ def scrape_anime_names(anime_name):
 
 try:
     scrape_anime_names("bleach")
+    driver.quit()
 
 except Exception as e:
     print(f"An error occurred: {e}")
