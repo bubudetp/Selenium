@@ -1,0 +1,2204 @@
+[
+    {
+        "episode_number": "",
+        "fr_title": "",
+        "eng_title": "",
+        "pub_date": ""
+    },
+    {
+        "episode_number": "1",
+        "fr_title": "Le jour o\u00f9 je suis devenu un Shinigami",
+        "eng_title": "The day I became a shinigami",
+        "pub_date": "05/10/2004"
+    },
+    {
+        "episode_number": "2",
+        "fr_title": "Le travail d'un Shinigami",
+        "eng_title": "A shinigami's work",
+        "pub_date": "12/10/2004"
+    },
+    {
+        "episode_number": "3",
+        "fr_title": "Le souhait du grand fr\u00e8re, le souhait de la petite s\u0153ur",
+        "eng_title": "The older brother's wish, the younger sister's wish",
+        "pub_date": "19/10/2004"
+    },
+    {
+        "episode_number": "4",
+        "fr_title": "Perroquet maudit",
+        "eng_title": "Cursed parakeet",
+        "pub_date": "26/10/2004"
+    },
+    {
+        "episode_number": "5",
+        "fr_title": "Bats l'ennemi invisible",
+        "eng_title": "Beat the invisible enemy!",
+        "pub_date": "02/11/2004"
+    },
+    {
+        "episode_number": "6",
+        "fr_title": "Combat \u00e0 mort : Ichigo contre Ichigo",
+        "eng_title": "Fight to the death! Ichigo vs. Ichigo",
+        "pub_date": "09/11/2004"
+    },
+    {
+        "episode_number": "7",
+        "fr_title": "Salutations d'un gar\u00e7on rembourr\u00e9",
+        "eng_title": "Greetings from a stuffed toy",
+        "pub_date": "16/11/2004"
+    },
+    {
+        "episode_number": "8",
+        "fr_title": "17 juin, un souvenir de pluie",
+        "eng_title": "June 17, a memory of rain",
+        "pub_date": "23/11/2004"
+    },
+    {
+        "episode_number": "9",
+        "fr_title": "Ennemi imbattable",
+        "eng_title": "Unbeatable enemy",
+        "pub_date": "30/11/2004"
+    },
+    {
+        "episode_number": "10",
+        "fr_title": "Attaque pendant le voyage en terre sacr\u00e9e",
+        "eng_title": "Assault on trip at sacred ground!",
+        "pub_date": "07/12/2004"
+    },
+    {
+        "episode_number": "11",
+        "fr_title": "Le l\u00e9gendaire Quincy",
+        "eng_title": "The legendary Quincy",
+        "pub_date": "14/12/2004"
+    },
+    {
+        "episode_number": "12",
+        "fr_title": "Un doux bras droit",
+        "eng_title": "A gentle right arm",
+        "pub_date": "21/12/2004"
+    },
+    {
+        "episode_number": "13",
+        "fr_title": "Fleur et Hollow",
+        "eng_title": "Flower and Hollow",
+        "pub_date": "28/12/2004"
+    },
+    {
+        "episode_number": "14",
+        "fr_title": "Retour en arri\u00e8re, combat \u00e0 mort",
+        "eng_title": "Back to back, a fight to the death!",
+        "pub_date": "11/01/2005"
+    },
+    {
+        "episode_number": "15",
+        "fr_title": "Le fameux plan de Kon",
+        "eng_title": "Kon's great plan",
+        "pub_date": "18/01/2005"
+    },
+    {
+        "episode_number": "16",
+        "fr_title": "Rencontre : Abarai Renji",
+        "eng_title": "Encounter: Abarai Renji!",
+        "pub_date": "25/01/2005"
+    },
+    {
+        "episode_number": "17",
+        "fr_title": "Ichigo meurt",
+        "eng_title": "Ichigo dies!",
+        "pub_date": "01/02/2005"
+    },
+    {
+        "episode_number": "18",
+        "fr_title": "R\u00e9clamation : la puissance du Shinigami",
+        "eng_title": "Reclaim! The power of the shinigami",
+        "pub_date": "08/02/2005"
+    },
+    {
+        "episode_number": "19",
+        "fr_title": "Ichigo devient un Hollow",
+        "eng_title": "Ichigo becomes a Hollow!",
+        "pub_date": "15/02/2005"
+    },
+    {
+        "episode_number": "20",
+        "fr_title": "L'ombre d'Ichimaru Gin",
+        "eng_title": "Ichimaru the silver shadow",
+        "pub_date": "15/02/2005"
+    },
+    {
+        "episode_number": "21",
+        "fr_title": "Entrez ! Le monde des Shinigamis",
+        "eng_title": "Enter! The world of the shinigami",
+        "pub_date": "15/02/2005"
+    },
+    {
+        "episode_number": "22",
+        "fr_title": "L'homme qui d\u00e9teste les Shinigamis",
+        "eng_title": "The man who hates Shinigamis",
+        "pub_date": "08/03/2005"
+    },
+    {
+        "episode_number": "23",
+        "fr_title": "La condamnation de Rukia, avant le 14\u00e8me jour",
+        "eng_title": "The sentence of Rukia, before the 14th day",
+        "pub_date": "15/03/2005"
+    },
+    {
+        "episode_number": "24",
+        "fr_title": "Rassemblement ! Les 13 Divisions",
+        "eng_title": "Assemble! The 13 divisions",
+        "pub_date": "22/03/2005"
+    },
+    {
+        "episode_number": "25",
+        "fr_title": "P\u00e9n\u00e9trer au centre d'une \u00e9norme bombe",
+        "eng_title": "Penetrate the centre with an enormous bombshell?",
+        "pub_date": "29/03/2005"
+    },
+    {
+        "episode_number": "26",
+        "fr_title": "Formation ! Le plus mauvais grade",
+        "eng_title": "Formation! The worst tag",
+        "pub_date": "05/04/2005"
+    },
+    {
+        "episode_number": "27",
+        "fr_title": "Lancer le coup de la mort",
+        "eng_title": "Release the death blow!",
+        "pub_date": "12/04/2005"
+    },
+    {
+        "episode_number": "28",
+        "fr_title": "Orihime est prise pour cible",
+        "eng_title": "Orihime is being targeted",
+        "pub_date": "19/04/2005"
+    },
+    {
+        "episode_number": "29",
+        "fr_title": "Perc\u00e9e ! Encercl\u00e9 par le filet des Shinigamis",
+        "eng_title": "Breakthrough! The Deathgods' Encompassing Net",
+        "pub_date": "26/04/2005"
+    },
+    {
+        "episode_number": "30",
+        "fr_title": "Le combat de Renji",
+        "eng_title": "Renji's Confrontation",
+        "pub_date": "03/05/2005"
+    },
+    {
+        "episode_number": "31",
+        "fr_title": "R\u00e9solu \u00e0 tuer",
+        "eng_title": "The Resolution to Kill",
+        "pub_date": "10/05/2005"
+    },
+    {
+        "episode_number": "32",
+        "fr_title": "Une \u00e9toile et un chien perdu",
+        "eng_title": "Stars and the stray",
+        "pub_date": "17/05/2005"
+    },
+    {
+        "episode_number": "33",
+        "fr_title": "Miracle ! Le myst\u00e9rieux nouveau h\u00e9ros",
+        "eng_title": "Miracle! The mysterious new hero",
+        "pub_date": "24/05/2005"
+    },
+    {
+        "episode_number": "34",
+        "fr_title": "Trag\u00e9die de l'aube",
+        "eng_title": "Tragedy of dawn",
+        "pub_date": "31/05/2005"
+    },
+    {
+        "episode_number": "35",
+        "fr_title": "Meurtre d'Aizen ! L'obscurit\u00e9 qui approche",
+        "eng_title": "Assasination of Aizen! The darkness which approaches",
+        "pub_date": "07/06/2005"
+    },
+    {
+        "episode_number": "36",
+        "fr_title": "Zaraki Kenpachi approche !",
+        "eng_title": "Zaraki Kenpachi approaches!",
+        "pub_date": "14/06/2005"
+    },
+    {
+        "episode_number": "37",
+        "fr_title": "La raison du Poing",
+        "eng_title": "Reason of the Fist",
+        "pub_date": "21/06/2005"
+    },
+    {
+        "episode_number": "38",
+        "fr_title": "D\u00e9sespoir ! Zangetsu bris\u00e9",
+        "eng_title": "Desperation! The brokened Zangetsu",
+        "pub_date": "28/06/2005"
+    },
+    {
+        "episode_number": "39",
+        "fr_title": "L'homme de l'immortalit\u00e9",
+        "eng_title": "The Man of Immortality",
+        "pub_date": "05/07/2005"
+    },
+    {
+        "episode_number": "40",
+        "fr_title": "Le Shinigami que Ganju a rencontr\u00e9",
+        "eng_title": "The Shinigami whom Ganju met",
+        "pub_date": "12/07/2005"
+    },
+    {
+        "episode_number": "41",
+        "fr_title": "R\u00e9union, Ichigo et Rukia",
+        "eng_title": "Reunion, Ichigo and Rukia",
+        "pub_date": "19/07/2005"
+    },
+    {
+        "episode_number": "42",
+        "fr_title": "Yoruichi, ma\u00eetre de la vitesse, danse !",
+        "eng_title": "Yoruichi, God of Flash, dances!",
+        "pub_date": "26/07/2005"
+    },
+    {
+        "episode_number": "43",
+        "fr_title": "Le m\u00e9prisable Shinigami",
+        "eng_title": "The Despicable Shinigami",
+        "pub_date": "02/08/2005"
+    },
+    {
+        "episode_number": "44",
+        "fr_title": "Ishida, les limites du pouvoir !",
+        "eng_title": "Ishida, Power of Limits!",
+        "pub_date": "09/08/2005"
+    },
+    {
+        "episode_number": "45",
+        "fr_title": "Surpasser les limites",
+        "eng_title": "Overcome the Limits!",
+        "pub_date": "16/08/2005"
+    },
+    {
+        "episode_number": "46",
+        "fr_title": "Les archives authentiques ! L'\u00e9cole des Shinigami",
+        "eng_title": "Authentic Records! School of Shinigami",
+        "pub_date": "23/08/2005"
+    },
+    {
+        "episode_number": "47",
+        "fr_title": "Les vengeurs",
+        "eng_title": "The Avengers",
+        "pub_date": "30/08/2005"
+    },
+    {
+        "episode_number": "48",
+        "fr_title": "Hitsugaya, hurle !",
+        "eng_title": "Hitsugaya roars!",
+        "pub_date": "06/09/2005"
+    },
+    {
+        "episode_number": "49",
+        "fr_title": "Le cauchemar de Rukia",
+        "eng_title": "Rukia's Nightmare",
+        "pub_date": "13/09/2005"
+    },
+    {
+        "episode_number": "50",
+        "fr_title": "L'\u00e9veil du lion",
+        "eng_title": "The Awakening Lion",
+        "pub_date": "20/09/2005"
+    },
+    {
+        "episode_number": "51",
+        "fr_title": "Le jour du jugement",
+        "eng_title": "Morning of the Sentence",
+        "pub_date": "27/09/2005"
+    },
+    {
+        "episode_number": "52",
+        "fr_title": "Renji, le serment de l'\u00e2me ! Rencontre mortelle avec Byakuya",
+        "eng_title": "Renji, Oath of the Soul! Death Match with Byakuya",
+        "pub_date": "04/10/2005"
+    },
+    {
+        "episode_number": "53",
+        "fr_title": "La tentation d'Ichimaru Gin, la r\u00e9solution de destruction",
+        "eng_title": "Ichimaru Gin's Temptation, Resolution of Destruction",
+        "pub_date": "04/10/2005"
+    },
+    {
+        "episode_number": "54",
+        "fr_title": "Un serment accompli ! R\u00e9cup\u00e9rer Rukia !",
+        "eng_title": "An Accomplished Oath! Get back Rukia!",
+        "pub_date": "18/10/2005"
+    },
+    {
+        "episode_number": "55",
+        "fr_title": "Le Shinigami le plus fort ! L'ultime confrontation entre ma\u00eetre et \u00e9l\u00e8ve",
+        "eng_title": "The Strongest Shinigami! Ultimate confrontation between teacher and student",
+        "pub_date": "25/10/2005"
+    },
+    {
+        "episode_number": "56",
+        "fr_title": "Bataille Supersonique ! D\u00e9terminer la D\u00e9esse de la Chevalerie !",
+        "eng_title": "Supersonic Battle! Determine the Goddess of Chilvary",
+        "pub_date": "01/11/2005"
+    },
+    {
+        "episode_number": "57",
+        "fr_title": "Mille fleurs de cerisier ecras\u00e9es ! Zangetsu passe \u00e0 travers le ciel",
+        "eng_title": "One thousand cherrry blossoms, crushed! Zangetsu thrusts through the sky",
+        "pub_date": "08/11/2005"
+    },
+    {
+        "episode_number": "58",
+        "fr_title": "D\u00e9cachetez ! La lame noire, la puissance miraculeuse",
+        "eng_title": "Unseal! The Black Blade, the Miraculous Power",
+        "pub_date": "15/11/2005"
+    },
+    {
+        "episode_number": "59",
+        "fr_title": "Conclusion du match mortel, fiert\u00e9 blanche et d\u00e9sir noir",
+        "eng_title": "Conclusion of the Death Match! White pride and black desire",
+        "pub_date": "22/11/2005"
+    },
+    {
+        "episode_number": "60",
+        "fr_title": "R\u00e9alit\u00e9 du d\u00e9sespoir, le poignard de l'assassin est brandi",
+        "eng_title": "Truth of Despair, the Dagger that has been Brandished",
+        "pub_date": "06/12/2005"
+    },
+    {
+        "episode_number": "61",
+        "fr_title": "Aizen vivant ! Horribles ambitions",
+        "eng_title": "Aizen stands out! His Terrifying Ambition",
+        "pub_date": "13/12/2005"
+    },
+    {
+        "episode_number": "62",
+        "fr_title": "Rassemblement ! La plus forte organisation de Shinigamis",
+        "eng_title": "Congress together! The Strongest Shinigami Organisation",
+        "pub_date": "20/12/2005"
+    },
+    {
+        "episode_number": "63",
+        "fr_title": "La d\u00e9cision de Rukia, les sentiments d'Ichigo",
+        "eng_title": "Rukia's Resolution, Ichigo's Feelings",
+        "pub_date": "10/01/2006"
+    },
+    {
+        "episode_number": "64",
+        "fr_title": "Nouveau trimestre scolaire, Renji arrive au monde des humains ?!",
+        "eng_title": "New School Term, Renji has come to the Material world?!",
+        "pub_date": "17/01/2006"
+    },
+    {
+        "episode_number": "65",
+        "fr_title": "Terreur rampante, la seconde victime",
+        "eng_title": "Creeping Terror, the Second Victim",
+        "pub_date": "24/01/2006"
+    },
+    {
+        "episode_number": "66",
+        "fr_title": "Passons \u00e0 travers ! Le pi\u00e8ge cach\u00e9 dans le labyrinthe",
+        "eng_title": "Break Through! The Trap Hidden in the Labyrinth",
+        "pub_date": "31/01/2006"
+    },
+    {
+        "episode_number": "67",
+        "fr_title": "Jeu mortel ! Le camarade manquant",
+        "eng_title": "Death Game! The Missing Classmate",
+        "pub_date": "07/02/2006"
+    },
+    {
+        "episode_number": "68",
+        "fr_title": "La v\u00e9ritable identit\u00e9 du Diable, le secret qui est r\u00e9v\u00e9l\u00e9",
+        "eng_title": "True Identity of the Devil, the Secret which is Revealed",
+        "pub_date": "14/02/2006"
+    },
+    {
+        "episode_number": "69",
+        "fr_title": "Bounts ! Les chasseurs d'\u00e2mes",
+        "eng_title": "Baunt! The Soul Hunters",
+        "pub_date": "14/02/2006"
+    },
+    {
+        "episode_number": "70",
+        "fr_title": "Retour de Rukia ! La renaissance de l'equipe de remplacement",
+        "eng_title": "Return of Rukia! The Substitute Team Revival",
+        "pub_date": "21/02/2006"
+    },
+    {
+        "episode_number": "71",
+        "fr_title": "Le moment de la collision ! Une mauvaise main se profile pr\u00e8s du Quincy !",
+        "eng_title": "The Moment of Collision! An Evil Hand Draws Near to the Quincy",
+        "pub_date": "07/03/2006"
+    },
+    {
+        "episode_number": "72",
+        "fr_title": "Assaut de l'eau ! \u00c9vasion de l'h\u00f4pital ferm\u00e9",
+        "eng_title": "Water Attack! Escape from the Shutdown Hospital",
+        "pub_date": "14/03/2006"
+    },
+    {
+        "episode_number": "73",
+        "fr_title": "Rassemblement \u00e0 la Place de Fortune ! L'homme qui fait son mouvement !",
+        "eng_title": "Gathering of Bounts! The man who makes his move",
+        "pub_date": "28/03/2006"
+    },
+    {
+        "episode_number": "74",
+        "fr_title": "M\u00e9moires d'un clan \u00e9ternellement vivant",
+        "eng_title": "Memories of an eternally living clan",
+        "pub_date": "28/03/2006"
+    },
+    {
+        "episode_number": "75",
+        "fr_title": "Ev\u00e8nement bouleversant pour la 11\u00e8me Division ! Le Shinigami qui sort de l'oubli",
+        "eng_title": "Earth-Shattering Event at 11th Division! The Shinigami that rises again",
+        "pub_date": "04/04/2006"
+    },
+    {
+        "episode_number": "76",
+        "fr_title": "Explosion de force ! Freed contre Zangetsu",
+        "eng_title": "Crashing Force! Friido vs. Zangetsu",
+        "pub_date": "04/04/2006"
+    },
+    {
+        "episode_number": "77",
+        "fr_title": "Disparition de la rancune ! Le Shinigami que Kenpachi a tu\u00e9 !",
+        "eng_title": "The Grudge That Does Not Vanish! The Shinigami that Kenpachi cut down",
+        "pub_date": "11/04/2006"
+    },
+    {
+        "episode_number": "78",
+        "fr_title": "Surprenantes r\u00e9v\u00e9lations pour les 13 Divisions ! La v\u00e9rit\u00e9 cach\u00e9e dans l'histoire",
+        "eng_title": "Shocking Revelations for the Gotei 13 divisions!! The truth buried in history",
+        "pub_date": "02/05/2006"
+    },
+    {
+        "episode_number": "79",
+        "fr_title": "La d\u00e9cision de mourir de Yoshino",
+        "eng_title": "Yoshino's decision of death",
+        "pub_date": "09/05/2006"
+    },
+    {
+        "episode_number": "80",
+        "fr_title": "Assaut d'un incroyable ennemi ! Une minuscule derni\u00e8re ligne de d\u00e9fense !",
+        "eng_title": "Assault from a formidable enemy! A tiny final line of defense?!",
+        "pub_date": "16/05/2006"
+    },
+    {
+        "episode_number": "81",
+        "fr_title": "Hitsugaya r\u00e9agit ! La ville attaqu\u00e9e",
+        "eng_title": "Hitsugaya moves! The Attack on the Street",
+        "pub_date": "23/05/2006"
+    },
+    {
+        "episode_number": "82",
+        "fr_title": "Ichigo contre Daruku ! Arriv\u00e9e progressive de l'obscurit\u00e9",
+        "eng_title": "Ichigo vs. Daruku! The Arrival of the Faded Darkness",
+        "pub_date": "30/05/2006"
+    },
+    {
+        "episode_number": "83",
+        "fr_title": "L'ombre grise, le secret des poup\u00e9es",
+        "eng_title": "Grey Shadow, the Secret of the Doll",
+        "pub_date": "06/06/2006"
+    },
+    {
+        "episode_number": "84",
+        "fr_title": "Rupture dans l'\u00e9quipe de remplacement ?! La trahison de Rukia",
+        "eng_title": "Breaking Up of the Substitute Team? The Betrayal of Rukia",
+        "pub_date": "13/06/2006"
+    },
+    {
+        "episode_number": "85",
+        "fr_title": "Le combat des larmes ! Rukia contre Orihime",
+        "eng_title": "Battle of Tears! Rukia vs. Orihime",
+        "pub_date": "13/06/2006"
+    },
+    {
+        "episode_number": "86",
+        "fr_title": "Rangiku danse ! Trancher l'ennemi invisible",
+        "eng_title": "Rangiku dances! Cut down the invisible enemy",
+        "pub_date": "20/06/2006"
+    },
+    {
+        "episode_number": "87",
+        "fr_title": "Byakuya convoqu\u00e9 ! Les 13 Divisions s'organisent !",
+        "eng_title": "Byakuya assembles! The Gotei 13 divisions make their move",
+        "pub_date": "04/07/2006"
+    },
+    {
+        "episode_number": "88",
+        "fr_title": "Annihilation des Lieutenants ?! Pi\u00e8ge dans la caverne souterraine",
+        "eng_title": "Annihilation of the Vice-Captains!? Trap in the Underground Cave",
+        "pub_date": "11/07/2006"
+    },
+    {
+        "episode_number": "89",
+        "fr_title": "Revanche ?! Ishida contre Nemu",
+        "eng_title": "Rematch?! Ishida vs. Nemu",
+        "pub_date": "18/07/2006"
+    },
+    {
+        "episode_number": "90",
+        "fr_title": "Abarai Renji, l'\u00e2me du Bankai !",
+        "eng_title": "Abarai Renji, Bankai of the Soul!",
+        "pub_date": "25/07/2006"
+    },
+    {
+        "episode_number": "91",
+        "fr_title": "Shinigami et Quincy, les pouvoirs retrouv\u00e9s !",
+        "eng_title": "Shinigami and Quincy, the reviving power",
+        "pub_date": "01/08/2006"
+    },
+    {
+        "episode_number": "92",
+        "fr_title": "De retour dans le monde des Shinigami !",
+        "eng_title": "Enter the World of the Shinigami, Again",
+        "pub_date": "08/08/2006"
+    },
+    {
+        "episode_number": "93",
+        "fr_title": "L'assaut des Bounts ! Chaos dans les 13 Divisions",
+        "eng_title": "Bount Assault! Chaos in the Gotei 13 divisions",
+        "pub_date": "15/08/2006"
+    },
+    {
+        "episode_number": "94",
+        "fr_title": "La d\u00e9cision de Hitsugaya ! L'heure de la confrontation approche",
+        "eng_title": "Hitsugaya's Resolution! The Moment of Conflict Approaches",
+        "pub_date": "22/08/2006"
+    },
+    {
+        "episode_number": "95",
+        "fr_title": "Byakuya dans la bataille ! La danse des fleurs de cerisiers qui d\u00e9chire le vent",
+        "eng_title": "Byakuya Takes the Field! Dance of the Wind-Splitting Cherry Blossoms",
+        "pub_date": "05/09/2006"
+    },
+    {
+        "episode_number": "96",
+        "fr_title": "Ichigo, Byakuya, Kariya, le combat des trois extr\u00eames !",
+        "eng_title": "Ichigo Byakuya Kariya, Battle of the Three Extremes!",
+        "pub_date": "12/09/2006"
+    },
+    {
+        "episode_number": "97",
+        "fr_title": "Hitsugaya passe \u00e0 l'attaque ! Abattre les ennemis dans la for\u00eat",
+        "eng_title": "Hitsugaya moves out! Cut down the enemy in the forest",
+        "pub_date": "19/09/2006"
+    },
+    {
+        "episode_number": "98",
+        "fr_title": "Clash ! Zaraki Kenpachi contre Ichinose Maki",
+        "eng_title": "Clash! Zaraki Kenpachi vs. Ichinose Maki",
+        "pub_date": "04/10/2006"
+    },
+    {
+        "episode_number": "99",
+        "fr_title": "Shinigami contre Shinigami ! Une puissance \u00e9crasante",
+        "eng_title": "Shinigami vs. Shinigami! The Uncontrollable Power",
+        "pub_date": "11/10/2006"
+    },
+    {
+        "episode_number": "100",
+        "fr_title": "Soi Fon meurt ?! La derni\u00e8re unit\u00e9 mobile secr\u00e8te",
+        "eng_title": "Soi Fong dies? The Last of the Secret Mobile Corps",
+        "pub_date": "18/10/2006"
+    },
+    {
+        "episode_number": "101",
+        "fr_title": "Le Bankai de Mayuri ! Sawatari, Le clash des d\u00e9mons",
+        "eng_title": "Mayuri's Bankai!! Sawatari Clash of the Demons",
+        "pub_date": "01/11/2006"
+    },
+    {
+        "episode_number": "102",
+        "fr_title": "Le dernier Quincy ! L'explosion du pouvoir",
+        "eng_title": "The Last Quincy! The Exploding Power",
+        "pub_date": "08/11/2006"
+    },
+    {
+        "episode_number": "103",
+        "fr_title": "Ishida, les limites repouss\u00e9es pour attaquer !",
+        "eng_title": "Ishida, exceeding the limits to attack!",
+        "pub_date": "15/11/2006"
+    },
+    {
+        "episode_number": "104",
+        "fr_title": "La lutte de la 10\u00e8me Division, l'\u00e9veil de Hyourinmaru",
+        "eng_title": "10th Division's Death Struggle! The Release of Hyourinmaru",
+        "pub_date": "22/11/2006"
+    },
+    {
+        "episode_number": "105",
+        "fr_title": "Kariya ! Le compte \u00e0 rebours de l'explosion",
+        "eng_title": "Kariya! Countdown to the Detonation",
+        "pub_date": "29/11/2006"
+    },
+    {
+        "episode_number": "106",
+        "fr_title": "Vie et vengeance ! Ishida, l'ultime d\u00e9cision",
+        "eng_title": "Life and Revenge! Ishida, the Ultimate Choice",
+        "pub_date": "06/12/2006"
+    },
+    {
+        "episode_number": "107",
+        "fr_title": "L'\u00e9p\u00e9e de la furie ! Le moment de la destruction",
+        "eng_title": "The Swung-Down Blade! The Moment of Ruin",
+        "pub_date": "13/12/2006"
+    },
+    {
+        "episode_number": "108",
+        "fr_title": "La lamentation du Bount ! La confrontation finale",
+        "eng_title": "The Wailing Bount! The Last Clash",
+        "pub_date": "20/12/2006"
+    },
+    {
+        "episode_number": "109",
+        "fr_title": "Ichigo et Rukia, pens\u00e9es refl\u00e9t\u00e9es dans le ciel",
+        "eng_title": "Ichigo and Rukia, Thoughts Revolving Around Heaven",
+        "pub_date": "04/01/2007"
+    },
+    {
+        "episode_number": "110",
+        "fr_title": "Les affaires reprennent ! L'\u00e9tudiant qui fout les chocottes",
+        "eng_title": "Reopening of the Substitute Business! The Terrifying Transfer Student",
+        "pub_date": "10/01/2007"
+    },
+    {
+        "episode_number": "111",
+        "fr_title": "Le choc ! La vraie apparence du p\u00e8re",
+        "eng_title": "Shock! The Fathers' True Identity",
+        "pub_date": "17/01/2007"
+    },
+    {
+        "episode_number": "112",
+        "fr_title": "Vizards et Arrancars",
+        "eng_title": "The Commencement of War, the Vizards and the Arrancars",
+        "pub_date": "24/01/2007"
+    },
+    {
+        "episode_number": "113",
+        "fr_title": "Le pr\u00e9lude \u00e0 l'apocalypse, l'offensive des Arrancars !",
+        "eng_title": "Prelude to the Apocalypse, the Arrancar Offensive!",
+        "pub_date": "31/01/2007"
+    },
+    {
+        "episode_number": "114",
+        "fr_title": "R\u00e9union, Ichigo, Rukia et les Shinigamis",
+        "eng_title": "Reunion, Ichigo and Rukia and Shinigamis",
+        "pub_date": "07/02/2007"
+    },
+    {
+        "episode_number": "115",
+        "fr_title": "Mission ! Les shinigamis qui sont arriv\u00e9s",
+        "eng_title": "Mission! The Shinigami Have Come",
+        "pub_date": "14/02/2007"
+    },
+    {
+        "episode_number": "116",
+        "fr_title": "Les yeux du mal, encore Aizen",
+        "eng_title": "The Evil Eye, Aizen Returns",
+        "pub_date": "21/02/2007"
+    },
+    {
+        "episode_number": "117",
+        "fr_title": "La bataille de Rukia commence ! La lame Blanche gla\u00e7ante!",
+        "eng_title": "Rukia's Battle Commences! The Freezing White Blade",
+        "pub_date": "28/02/2007"
+    },
+    {
+        "episode_number": "118",
+        "fr_title": "Le Bankai d'Ikkaku ! Le pouvoir qui brise tout",
+        "eng_title": "Ikkaku's Bankai! The power that breaks everything",
+        "pub_date": "07/03/2007"
+    },
+    {
+        "episode_number": "119",
+        "fr_title": "L'histoire secr\u00e8te de l'\u00e9quipe de Zaraki ! L'homme chanceux",
+        "eng_title": "Zaraki Division's Secret Story! The lucky men",
+        "pub_date": "21/03/2007"
+    },
+    {
+        "episode_number": "120",
+        "fr_title": "L'\u00e9parpillement d'Hitsugaya. Hyourinmaru bris\u00e9",
+        "eng_title": "Hitsugaya scatters! The broken Hyourinmaru",
+        "pub_date": "28/03/2007"
+    },
+    {
+        "episode_number": "121",
+        "fr_title": "Clash ! La protection contre la souffrance",
+        "eng_title": "Clash! The protector vs. the bearer",
+        "pub_date": "11/04/2007"
+    },
+    {
+        "episode_number": "122",
+        "fr_title": "Vizard ! La puissance r\u00e9veill\u00e9e",
+        "eng_title": "Vizard! The power of the awakened",
+        "pub_date": "18/04/2007"
+    },
+    {
+        "episode_number": "123",
+        "fr_title": "Ichigo, hollowfication totale ?!",
+        "eng_title": "Ichigo, Complete Hollowification?!",
+        "pub_date": "25/04/2007"
+    },
+    {
+        "episode_number": "124",
+        "fr_title": "Clash ! Bankai Noir et Bankai Blanc ?",
+        "eng_title": "Clash! The Black Bankai and the White Bankai",
+        "pub_date": "02/05/2007"
+    },
+    {
+        "episode_number": "125",
+        "fr_title": "Annonce Urgente ! Le plan terrifiant d'Aizen",
+        "eng_title": "Urgent Report! Aizen's Terrifying Plan",
+        "pub_date": "09/05/2007"
+    },
+    {
+        "episode_number": "126",
+        "fr_title": "Uryu vs. Ryuken! Clash entre les Quincys p\u00e8re et fils",
+        "eng_title": "Uryuu vs. Ryuuken! Clash of the Parent-Child Quincys",
+        "pub_date": "16/05/2007"
+    },
+    {
+        "episode_number": "127",
+        "fr_title": "La d\u00e9cision d'Urahara, les pens\u00e9es d'Orihime",
+        "eng_title": "Urahara's Decision, Orihime's Thoughts",
+        "pub_date": "30/05/2007"
+    },
+    {
+        "episode_number": "128",
+        "fr_title": "Le cauchemar Arrancar ! L'\u00e9quipe Hitsugaya entre en jeu",
+        "eng_title": "The Nightmare Arrancar! Team Hitsugaya moves out",
+        "pub_date": "06/06/2007"
+    },
+    {
+        "episode_number": "129",
+        "fr_title": "La descente en piqu\u00e9e du sombre \u00e9missaire : le mal se propage !",
+        "eng_title": "The Swooping Descent of the Dark Emissary! The Propagation of Malice",
+        "pub_date": "13/06/2007"
+    },
+    {
+        "episode_number": "130",
+        "fr_title": "L'ennemi invisible ! La d\u00e9cision impitoyable de Hitsugaya",
+        "eng_title": "The Invisible Enemy! Hitsugaya's Merciless Decision",
+        "pub_date": "20/06/2007"
+    },
+    {
+        "episode_number": "131",
+        "fr_title": "Les larmes de Rangiku, le d\u00e9part douleureux du fr\u00e8re et de la s\u0153ur",
+        "eng_title": "Rangiku's Tears, the Sorrowful Parting of Brother and Sister",
+        "pub_date": "27/06/2007"
+    },
+    {
+        "episode_number": "132",
+        "fr_title": "Hitsugaya, Karin et le football",
+        "eng_title": "Hitsugaya, Karin and Soccer Ball",
+        "pub_date": "04/07/2007"
+    },
+    {
+        "episode_number": "133",
+        "fr_title": "Ikkaku l'entra\u00eeneur de Kendo",
+        "eng_title": "Ikkaku's Hot-Blooded Kendo Tale",
+        "pub_date": "11/07/2007"
+    },
+    {
+        "episode_number": "134",
+        "fr_title": "Le beau patissier, Yumichika !",
+        "eng_title": "The Beautiful Patissier, Yumichika!",
+        "pub_date": "18/07/2007"
+    },
+    {
+        "episode_number": "135",
+        "fr_title": "Kon est dup\u00e9! Rangiku sous surveillance",
+        "eng_title": "Kon is Deceived! Rangiku on the Lookout..",
+        "pub_date": "25/07/2007"
+    },
+    {
+        "episode_number": "136",
+        "fr_title": "Guerre civile \u00e0 l'Hueco Mundo ! La mort d'Ulquiorra",
+        "eng_title": "Civil War in Hueco Mondo! Ulquiorra's death",
+        "pub_date": "08/08/2007"
+    },
+    {
+        "episode_number": "137",
+        "fr_title": "La Bataille Malveillante, le pi\u00e8ge d'Aizen",
+        "eng_title": "The Malicious Battle, Aizen's Trap",
+        "pub_date": "22/08/2007"
+    },
+    {
+        "episode_number": "138",
+        "fr_title": "Deuxi\u00e8me d\u00e9placement du Hueco Mundo ! Hitsugaya vs Yammy",
+        "eng_title": "Hueco Mondo moves again! Hitsugaya vs. Yammy",
+        "pub_date": "29/08/2007"
+    },
+    {
+        "episode_number": "139",
+        "fr_title": "Ichigo vs Grimmjow, La bataille de 11 secondes !",
+        "eng_title": "Ichigo vs. Grimmjow, the 11-second battle",
+        "pub_date": "05/09/2007"
+    },
+    {
+        "episode_number": "140",
+        "fr_title": "Le projet d'Ulquiorra, le moment o\u00f9 le soleil se l\u00e8ve !",
+        "eng_title": "Ulquiorra's Scheme, the Moment when the Sun Sets",
+        "pub_date": "12/09/2007"
+    },
+    {
+        "episode_number": "141",
+        "fr_title": "Adieu..., Kurosaki-kun!",
+        "eng_title": "Goodbye..., Kurosaki",
+        "pub_date": "19/09/2007"
+    },
+    {
+        "episode_number": "142",
+        "fr_title": "Ordre strict ! Interdiction de sauver Inoue Orihime",
+        "eng_title": "Strict Order! The Forbidden Rescue of Inoue Orihime",
+        "pub_date": "26/09/2007"
+    },
+    {
+        "episode_number": "143",
+        "fr_title": "La renaissance de Grimmjow",
+        "eng_title": "Grimmjow's Revival",
+        "pub_date": "03/10/2007"
+    },
+    {
+        "episode_number": "144",
+        "fr_title": "Ishida-Chad, l'acc\u00e9l\u00e9ration d'un nouveau pouvoir",
+        "eng_title": "Ishida Chad, The Quickening of a new power",
+        "pub_date": "17/10/2007"
+    },
+    {
+        "episode_number": "145",
+        "fr_title": "L'Espada se r\u00e9unit ! L'assembl\u00e9e royale d'Aizen",
+        "eng_title": "The Espada Gathers! Aizen's royal assembly",
+        "pub_date": "24/10/2007"
+    },
+    {
+        "episode_number": "146",
+        "fr_title": "Son nom est Nell ! L'apparence de l'\u00e9trange arrancar",
+        "eng_title": "The Name is Nel! The appearance of the strange arrancar",
+        "pub_date": "31/10/2007"
+    },
+    {
+        "episode_number": "147",
+        "fr_title": "For\u00eat de Menos ! La Recherche de la disparue Rukia",
+        "eng_title": "The Forest of Menos! The Search for the Missing Rukia",
+        "pub_date": "07/11/2007"
+    },
+    {
+        "episode_number": "148",
+        "fr_title": "Le shinigami qui venait du pass\u00e9",
+        "eng_title": "Ashido, the Shinigami who came from the Past",
+        "pub_date": "14/11/2007"
+    },
+    {
+        "episode_number": "149",
+        "fr_title": "L'effondrement de la for\u00eat",
+        "eng_title": "Through the Crumbling Forest, a Million Menos",
+        "pub_date": "21/11/2007"
+    },
+    {
+        "episode_number": "150",
+        "fr_title": "Revenir ici vivant",
+        "eng_title": "Oath! Back Here Alive Again",
+        "pub_date": "28/11/2007"
+    },
+    {
+        "episode_number": "151",
+        "fr_title": "La temp\u00eate hurlante ! Rencontre avec l'Arrancar dansant",
+        "eng_title": "The Raging Storm! Encounter with the Dancing Arrancar",
+        "pub_date": "05/12/2007"
+    },
+    {
+        "episode_number": "152",
+        "fr_title": "Ichigo riposte ! Voici mon bankai",
+        "eng_title": "Ichigo Strikes Back! This is my Bankai",
+        "pub_date": "12/12/2007"
+    },
+    {
+        "episode_number": "153",
+        "fr_title": "Recherche diabolique ! Le plan de Szayel Aporro",
+        "eng_title": "The Devilish Research! Szayel Aporro's Plan",
+        "pub_date": "19/12/2007"
+    },
+    {
+        "episode_number": "154",
+        "fr_title": "Rukia et Kaien ! R\u00e9union douloureuse !",
+        "eng_title": "Rukia and Kaien, the Sorrowful Reunion",
+        "pub_date": "26/12/2007"
+    },
+    {
+        "episode_number": "155",
+        "fr_title": "Rukia riposte ! Le Kidou d\u00e9sesp\u00e9r\u00e9",
+        "eng_title": "Rukia Retaliates! Release the Desperate Kidou",
+        "pub_date": "09/01/2008"
+    },
+    {
+        "episode_number": "156",
+        "fr_title": "Ishida et Pesche, l'Attaque unifi\u00e9e de l'Amiti\u00e9",
+        "eng_title": "Ishida & Pesshe, the United Attack of Friendship?",
+        "pub_date": "16/01/2008"
+    },
+    {
+        "episode_number": "157",
+        "fr_title": "L'atout d'Ishida, Le Faucheur d'\u00c2mes",
+        "eng_title": "Ishida's Trump Card, Seele Schneider",
+        "pub_date": "23/01/2008"
+    },
+    {
+        "episode_number": "158",
+        "fr_title": "Bras droit du G\u00e9ant, Bras gauche du Diable",
+        "eng_title": "Right Arm of the Giant, Left Arm of the Devil",
+        "pub_date": "30/01/2008"
+    },
+    {
+        "episode_number": "159",
+        "fr_title": "Yasutora Sado meurt ! Les larmes d'Orihime",
+        "eng_title": "Sado Yasutora dies! Orihime's Tears",
+        "pub_date": "06/02/2008"
+    },
+    {
+        "episode_number": "160",
+        "fr_title": "Testament - Ton c\u0153ur est ici",
+        "eng_title": "Testament, Your Heart is Right Here...",
+        "pub_date": "13/02/2008"
+    },
+    {
+        "episode_number": "161",
+        "fr_title": "Le cruel arrancar, la provocation d'Ulquiorra",
+        "eng_title": "The Cruel Arrancar, Ulquiorra's Provocation",
+        "pub_date": "20/02/2008"
+    },
+    {
+        "episode_number": "162",
+        "fr_title": "Le rire de Szayel Aporro, Renji compl\u00e8tement pi\u00e9g\u00e9",
+        "eng_title": "Syazel Aporro Laughs, the Net Trapping Renji is Complete",
+        "pub_date": "27/02/2008"
+    },
+    {
+        "episode_number": "163",
+        "fr_title": "Shinigami et Quincy, la folie de la bataille",
+        "eng_title": "Shinigami and Quincy, the Battle with Madness",
+        "pub_date": "05/03/2008"
+    },
+    {
+        "episode_number": "164",
+        "fr_title": "La strat\u00e9gie d'Ishida, les 20 secondes d'attaque-d\u00e9fense",
+        "eng_title": "Ishida's Strategy, the 20-second Offense and Defense",
+        "pub_date": "12/03/2008"
+    },
+    {
+        "episode_number": "165",
+        "fr_title": "Bouillantes intentions meurtri\u00e8res ! La joie de Grimmjow",
+        "eng_title": "The Murderous Intent Boils! The Joyful Grimmjow",
+        "pub_date": "19/03/2008"
+    },
+    {
+        "episode_number": "166",
+        "fr_title": "Effort d\u00e9sesp\u00e9r\u00e9 contre effort d\u00e9sesp\u00e9r\u00e9 ! La Hollowmorphose d'Ichigo",
+        "eng_title": "Desperate Effort VS Desperate Effort! The Hollowized Ichigo",
+        "pub_date": "09/04/2008"
+    },
+    {
+        "episode_number": "167",
+        "fr_title": "Le temps de la conclusion, la fin de Grimmjow",
+        "eng_title": "The Moment of Conclusion, the End of Grimmjow",
+        "pub_date": "16/04/2008"
+    },
+    {
+        "episode_number": "168",
+        "fr_title": "Le nouveau Capitaine apparait! Son nom est Amagai Sh\u00fbsuke",
+        "eng_title": "The New Captain Appears! His name is Amagai Shuusuke",
+        "pub_date": "23/04/2008"
+    },
+    {
+        "episode_number": "169",
+        "fr_title": "Nouveau d\u00e9veloppement, un dangereux \u00e9tudiant transfer\u00e9 appara\u00eet !",
+        "eng_title": "New Development, the Dangerous Transfer Student Appears!",
+        "pub_date": "07/05/2008"
+    },
+    {
+        "episode_number": "170",
+        "fr_title": "Lutte d\u00e9sesp\u00e9r\u00e9e sous le clair de Lune, l'Assassin myst\u00e9rieux et son Zanpakuto",
+        "eng_title": "Desperate Struggle Under the Moonlit Night, the Mysterious Assassin and Zanpakut\u014d",
+        "pub_date": "14/05/2008"
+    },
+    {
+        "episode_number": "171",
+        "fr_title": "Kenryu, la Profusion des florissantes Fleurs cramoisies",
+        "eng_title": "Kenryu, the Profusion of Blooming Crimson Flowers",
+        "pub_date": "21/05/2008"
+    },
+    {
+        "episode_number": "172",
+        "fr_title": "Kifune part en guerre ! Le Vent Violent qui fait rage",
+        "eng_title": "Kibune Goes to War! The Violent Wind that Rages",
+        "pub_date": "28/05/2008"
+    },
+    {
+        "episode_number": "173",
+        "fr_title": "L'Apparition du grand Mal! Les T\u00e9n\u00e8bres dans la Maison de Kasumioji",
+        "eng_title": "The Appearance of the Great Evil! The Darkness in the House of Kasumi\u014dji",
+        "pub_date": "04/06/2008"
+    },
+    {
+        "episode_number": "174",
+        "fr_title": "Brise la Limite du Miroir! La Captivit\u00e9 d'Ichigo",
+        "eng_title": "Break the Mirror's Boundary! Ichigo's Captivity",
+        "pub_date": "11/06/2008"
+    },
+    {
+        "episode_number": "175",
+        "fr_title": "La Vengeance de l'Assassin, Ichigo est Cibl\u00e9",
+        "eng_title": "The Revenging Assassin, Ichigo is Targeted",
+        "pub_date": "18/06/2008"
+    },
+    {
+        "episode_number": "176",
+        "fr_title": "Myst\u00e8re ! L'\u00e9p\u00e9e qui consummait l'assassin",
+        "eng_title": "Mystery! The Sword-Consuming Assassin",
+        "pub_date": "25/06/2008"
+    },
+    {
+        "episode_number": "177",
+        "fr_title": "Le retour de Rukia ! La lame qui se d\u00e9cha\u00eene 178. Le Cauchemar r\u00e9v\u00e9l\u00e9, Ichigo \u00e0 l'Int\u00e9rieur du Miroir",
+        "eng_title": "The Reversal of Rukia, the Rampaging Blade",
+        "pub_date": "25/06/2008"
+    },
+    {
+        "episode_number": "178",
+        "fr_title": "",
+        "eng_title": "The Nightmare Which is Shown, Ichigo's Inside the Mirror",
+        "pub_date": "02/07/2008"
+    },
+    {
+        "episode_number": "179",
+        "fr_title": "Confrontation !? Amagai contre le Gotei 13",
+        "eng_title": "Confrontation?! Amagai vs. Gotei 13",
+        "pub_date": "09/07/2008"
+    },
+    {
+        "episode_number": "180",
+        "fr_title": "La D\u00e9cision de la Princesse, La Mari\u00e9e afflig\u00e9e",
+        "eng_title": "The Princess' Decision, the Sorrowful Bride",
+        "pub_date": "16/07/2008"
+    },
+    {
+        "episode_number": "181",
+        "fr_title": "Le D\u00e9ploiement de la 2\u00e8me Division ! Ichigo est encercl\u00e9",
+        "eng_title": "The 2nd Division Sorties! Ichigo is Surrounded",
+        "pub_date": "23/07/2008"
+    },
+    {
+        "episode_number": "182",
+        "fr_title": "La v\u00e9ritable Force d'Amagai, le Zanpakuto est lib\u00e9r\u00e9!",
+        "eng_title": "Amagai's True Strength, zanpakut\u014d is released!",
+        "pub_date": "30/07/2008"
+    },
+    {
+        "episode_number": "183",
+        "fr_title": "L'obscurit\u00e9 se d\u00e9place! Le vrai visage de Kifune",
+        "eng_title": "The Darkness Which Moves! Kibune's True Colors",
+        "pub_date": "06/08/2008"
+    },
+    {
+        "episode_number": "184",
+        "fr_title": "Kira et Kifune, l'attaque et la d\u00e9fense de la 3\u00e8me Division",
+        "eng_title": "Kira and Kibune, Offense and Defense of 3rd Division",
+        "pub_date": "20/08/2008"
+    },
+    {
+        "episode_number": "185",
+        "fr_title": "Glace et Flamme! La lutte f\u00e9roce d'Amagai contre Hitsugaya",
+        "eng_title": "Ice and Flame! Fierce Fight of Amagai vs. Hitsugaya",
+        "pub_date": "27/08/2008"
+    },
+    {
+        "episode_number": "186",
+        "fr_title": "Ordre de sortie! Supprimez la maison de Kasumioji",
+        "eng_title": "Sortie Orders! Suppress the House of Kasumi\u014dji",
+        "pub_date": "03/09/2008"
+    },
+    {
+        "episode_number": "187",
+        "fr_title": "Ichigo fait rage! Le secret de l'assassin",
+        "eng_title": "Ichigo Rages! The Assassin's Secret",
+        "pub_date": "10/09/2008"
+    },
+    {
+        "episode_number": "188",
+        "fr_title": "Duel! Amagai vs. Ichigo",
+        "eng_title": "Duel! Amagai vs. Ichigo",
+        "pub_date": "17/09/2008"
+    },
+    {
+        "episode_number": "189",
+        "fr_title": "La fiert\u00e9 du Shinigami tomb\u00e9",
+        "eng_title": "The Fallen Shinigami's Pride",
+        "pub_date": "07/10/2008"
+    },
+    {
+        "episode_number": "190",
+        "fr_title": "Arc Hueco Mundo, reprise!",
+        "eng_title": "Hueco Mundo Chapter, Restart!",
+        "pub_date": "14/10/2008"
+    },
+    {
+        "episode_number": "191",
+        "fr_title": "Le banquet effrayant, le th\u00e9\u00e2tre de Szayel Aporro",
+        "eng_title": "The Frightening Banquet, Szayel Aporro's Theater",
+        "pub_date": "21/10/2008"
+    },
+    {
+        "episode_number": "192",
+        "fr_title": "Une grande beaut\u00e9 participe \u00e0 la bataille? Le secret de Nell",
+        "eng_title": "Nel's Secret, a Big-Breasted Beauty Joins the Battle?!",
+        "pub_date": "28/10/2008"
+    },
+    {
+        "episode_number": "193",
+        "fr_title": "L'irr\u00e9sistible, spectacle de marionnettes de terreur",
+        "eng_title": "The Irresistable, Puppet Show of Terror",
+        "pub_date": "04/11/2008"
+    },
+    {
+        "episode_number": "194",
+        "fr_title": "Le pass\u00e9 de Neliel",
+        "eng_title": "Neliel's Past",
+        "pub_date": "11/11/2008"
+    },
+    {
+        "episode_number": "195",
+        "fr_title": "L'union ultime, Le s\u00e9rieux de Pesche",
+        "eng_title": "The Ultimate Union! Pesche's Seriousness",
+        "pub_date": "18/11/2008"
+    },
+    {
+        "episode_number": "196",
+        "fr_title": "La plus forte arm\u00e9e des Shinigamis appara\u00eet",
+        "eng_title": "Joining the Battle! The Strongest Shinigami Army Appears",
+        "pub_date": "25/11/2008"
+    },
+    {
+        "episode_number": "197",
+        "fr_title": "Bankai de Byakuya, la col\u00e8re tranquille",
+        "eng_title": "Byakuya's Bankai, the Quiet Anger",
+        "pub_date": "02/12/2008"
+    },
+    {
+        "episode_number": "198",
+        "fr_title": "Les deux scientifiques, le pi\u00e8ge de Mayuri",
+        "eng_title": "The Two Scientists, Mayuri's Trap",
+        "pub_date": "09/12/2008"
+    },
+    {
+        "episode_number": "199",
+        "fr_title": "Sainte naissance, La R\u00e9surrection de Szayel Aporro",
+        "eng_title": "Holy Birth, the Resurrecting Szayel Aporro",
+        "pub_date": "16/12/2008"
+    },
+    {
+        "episode_number": "200",
+        "fr_title": "Le corps le plus dur?! Nnoitra se met en col\u00e8re",
+        "eng_title": "The Most Hardest Body?! Nnoitra is Cut Down",
+        "pub_date": "23/12/2008"
+    },
+    {
+        "episode_number": "201",
+        "fr_title": "Nnoitra donne tout ! La prolif\u00e9ration des armes",
+        "eng_title": "Nnoitra Releases! The Multiplying Arms",
+        "pub_date": "06/01/2009"
+    },
+    {
+        "episode_number": "202",
+        "fr_title": "Conclusion de violents combats ! Qui est le plus fort",
+        "eng_title": "Fierce Fighting Conclusion! Who's the Strongest",
+        "pub_date": "13/01/2009"
+    },
+    {
+        "episode_number": "203",
+        "fr_title": "R\u00e9union \u00e0 Karakura ! Aizen contre les Shinigamis",
+        "eng_title": "Karakura Town Gathers! Aizen Versus Shinigami",
+        "pub_date": "20/01/2009"
+    },
+    {
+        "episode_number": "204",
+        "fr_title": "Le Seppuku d'Ichigo, strat\u00e9gie de persuasion",
+        "eng_title": "Ichigo's Seppuku Persuasion Strategy",
+        "pub_date": "27/01/2009"
+    },
+    {
+        "episode_number": "205",
+        "fr_title": "Fureur! Le tournoi de football des Shinigamis",
+        "eng_title": "Thump! A Kemari Tournament Filled with Hollows",
+        "pub_date": "03/02/2009"
+    },
+    {
+        "episode_number": "206",
+        "fr_title": "Le chapitre du Pass\u00e9 commence ! La V\u00e9rit\u00e9, 110 ans plus t\u00f4t",
+        "eng_title": "The Past Chapter Begins! The Truth from 110 Years Ago",
+        "pub_date": "10/02/2009"
+    },
+    {
+        "episode_number": "207",
+        "fr_title": "Le nouveau Capitaine de la 12e division, Urahara Kisuke",
+        "eng_title": "12th Division's New Captain, Urahara Kisuke",
+        "pub_date": "17/02/2009"
+    },
+    {
+        "episode_number": "208",
+        "fr_title": "Aizen et le petit g\u00e9nie",
+        "eng_title": "Aizen and the Boy Genius",
+        "pub_date": "24/02/2009"
+    },
+    {
+        "episode_number": "209",
+        "fr_title": "Muguruma de la 9\u00e8me Division part",
+        "eng_title": "Muguruma's 9th Division, sets out",
+        "pub_date": "03/03/2009"
+    },
+    {
+        "episode_number": "210",
+        "fr_title": "Hiyori meurt? Le d\u00e9but de la trag\u00e9die",
+        "eng_title": "Hiyori dies? The Beginning of Tragedy",
+        "pub_date": "10/03/2009"
+    },
+    {
+        "episode_number": "211",
+        "fr_title": "Trahison ! La manoeuvre secr\u00e8te d'Aizen",
+        "eng_title": "Betrayal! Aizen's Secret Maneuvers",
+        "pub_date": "17/03/2009"
+    },
+    {
+        "episode_number": "212",
+        "fr_title": "Sauvetage d'Hirako ! Aizen vs Urahara",
+        "eng_title": "Rescue Hirako! Aizen vs. Urahara",
+        "pub_date": "24/03/2009"
+    },
+    {
+        "episode_number": "213",
+        "fr_title": "Le d\u00e9tective de l'enterrement des \u00e2mes, le Karakurizer n\u00e9",
+        "eng_title": "The Soul Burial Detective, Karakuraizer is Born",
+        "pub_date": "31/03/2009"
+    },
+    {
+        "episode_number": "214",
+        "fr_title": "Le dernier jour du Karakurizer",
+        "eng_title": "Karakuraizer's Last Day",
+        "pub_date": "07/04/2009"
+    },
+    {
+        "episode_number": "215",
+        "fr_title": "D\u00e9fendre Karakura ! L'entr\u00e9e des Shinigamis",
+        "eng_title": "Defend Karakura Town! Entire Appearance of the Shinigami",
+        "pub_date": "14/04/2009"
+    },
+    {
+        "episode_number": "216",
+        "fr_title": "L'\u00e9lite! Les quatre Shinigamis",
+        "eng_title": "Elite! The Four Shinigami",
+        "pub_date": "21/04/2009"
+    },
+    {
+        "episode_number": "217",
+        "fr_title": "Charlotte le beau petit d\u00e9mon!",
+        "eng_title": "Beautiful Little Devil Charlotte",
+        "pub_date": "28/04/2009"
+    },
+    {
+        "episode_number": "218",
+        "fr_title": "Kira, la bataille du d\u00e9sespoir",
+        "eng_title": "Kira, The Battle Within Despair",
+        "pub_date": "05/05/2009"
+    },
+    {
+        "episode_number": "219",
+        "fr_title": "Le shikai d'Hisagi ! Son nom est ...",
+        "eng_title": "Hisagi's Shikai! The Name is...",
+        "pub_date": "12/05/2009"
+    },
+    {
+        "episode_number": "220",
+        "fr_title": "Ikkaku tombe ! Moment critique pour les Shinigami",
+        "eng_title": "Ikkaku Falls! The Shinigami's Crisis",
+        "pub_date": "19/05/2009"
+    },
+    {
+        "episode_number": "221",
+        "fr_title": "La d\u00e9monstration compl\u00e8te ! Shinigami VS Espada",
+        "eng_title": "The Full Showdown! Shinigami vs. Espada",
+        "pub_date": "26/05/2009"
+    },
+    {
+        "episode_number": "222",
+        "fr_title": "La plus mal\u00e9fique citation !? Soi Fon & Omaeda",
+        "eng_title": "The Most Evil Tag!? Soi Fon & \u014cmaeda",
+        "pub_date": "02/06/2009"
+    },
+    {
+        "episode_number": "223",
+        "fr_title": "Un corps miraculeux ! Lib\u00e9ration de Ggio",
+        "eng_title": "A Miraculous Body! Ggio Releases",
+        "pub_date": "09/06/2009"
+    },
+    {
+        "episode_number": "224",
+        "fr_title": "La bataille des 3 contre 1! La crise de Rangiku",
+        "eng_title": "3 vs. 1 Battle! Rangiku's Crisis",
+        "pub_date": "16/06/2009"
+    },
+    {
+        "episode_number": "225",
+        "fr_title": "Tous les vice-capitaines annihil\u00e9s! Le terrifiant monstre diabolique",
+        "eng_title": "All Vice-Captains Annihilated! The Terrifying Demonic Beast",
+        "pub_date": "23/06/2009"
+    },
+    {
+        "episode_number": "226",
+        "fr_title": "Le combat f\u00e9roce se termine? Vers une nouvelle bataille!",
+        "eng_title": "Fierce Fighting Concludes? Towards a New Battle!",
+        "pub_date": "30/06/2009"
+    },
+    {
+        "episode_number": "227",
+        "fr_title": "Merveilleuse erreur",
+        "eng_title": "Wonderful Error",
+        "pub_date": "07/07/2009"
+    },
+    {
+        "episode_number": "228",
+        "fr_title": "\u00c9t\u00e9! Mer! Festival de maillot de bain!!",
+        "eng_title": "Summer! Sea! Swimsuit Festival!!",
+        "pub_date": "14/07/2009"
+    },
+    {
+        "episode_number": "229",
+        "fr_title": "Pleurs de l'\u00c2me ? La Naissance du Nouveau Shinigami !",
+        "eng_title": "Cry of the Soul? The Rug Shinigami is Born!",
+        "pub_date": "21/07/2009"
+    },
+    {
+        "episode_number": "230",
+        "fr_title": "Un nouvel ennemi! La mat\u00e9rialisation du Zanpakuto",
+        "eng_title": "A New Enemy! The Materialization of Zanpakut\u014d",
+        "pub_date": "28/07/2009"
+    },
+    {
+        "episode_number": "231",
+        "fr_title": "Byakuya, Disparaissant avec les fleurs de cerisier",
+        "eng_title": "Byakuya, Disappearing with the Cherry Blossoms",
+        "pub_date": "04/08/2009"
+    },
+    {
+        "episode_number": "232",
+        "fr_title": "Sode no Shirayuki contre Rukia ! L'Illusion Du c\u0153ur",
+        "eng_title": "Sode no Shirayuki vs. Rukia! Confused Heart",
+        "pub_date": "11/08/2009"
+    },
+    {
+        "episode_number": "233",
+        "fr_title": "Zangetsu devient un ennemi",
+        "eng_title": "Zangetsu Becomes an Enemy",
+        "pub_date": "18/08/2009"
+    },
+    {
+        "episode_number": "234",
+        "fr_title": "Renji surpris !? Les deux Zabimaru",
+        "eng_title": "Renji Surprised?! The Two Zabimarus",
+        "pub_date": "25/08/2009"
+    },
+    {
+        "episode_number": "235",
+        "fr_title": "Clash ! Hisagi contre Kazeshini",
+        "eng_title": "Clash! Hisagi vs. Kazeshini",
+        "pub_date": "01/09/2009"
+    },
+    {
+        "episode_number": "236",
+        "fr_title": "Lib\u00e9ration ! Le nouveau Getsuga Tensho",
+        "eng_title": "Release! The New Getsuga Tensh\u014d",
+        "pub_date": "08/09/2009"
+    },
+    {
+        "episode_number": "237",
+        "fr_title": "Soi Fon, Entourant le Zanpakuto",
+        "eng_title": "Soi Fon, Surrounding the Zanpakut\u014d",
+        "pub_date": "15/09/2009"
+    },
+    {
+        "episode_number": "238",
+        "fr_title": "Amiti\u00e9 ? Haine ? Haineko et Tobiume",
+        "eng_title": "Friendship? Hatred? Haineko & Tobiume",
+        "pub_date": "22/09/2009"
+    },
+    {
+        "episode_number": "239",
+        "fr_title": "Le R\u00e9veil De Hyorinmaru! Le combat acharn\u00e9 d'Hitsugaya",
+        "eng_title": "The Awakening Hy\u014drinmaru! Hitsugaya's Fierce Fight",
+        "pub_date": "29/09/2009"
+    },
+    {
+        "episode_number": "240",
+        "fr_title": "La trahison de Byakuya !",
+        "eng_title": "Byakuya's Betrayal",
+        "pub_date": "06/10/2009"
+    },
+    {
+        "episode_number": "241",
+        "fr_title": "Pour la Fiert\u00e9 ! Byakuya vs. Renji",
+        "eng_title": "For the Sake of Pride! Byakuya vs. Renji",
+        "pub_date": "13/10/2009"
+    },
+    {
+        "episode_number": "242",
+        "fr_title": "Shinigami et Zanpakuto, Sortie Totale",
+        "eng_title": "Shinigami and Zanpakut\u014d, Total Sortie",
+        "pub_date": "20/10/2009"
+    },
+    {
+        "episode_number": "243",
+        "fr_title": "Duel ! Ichigo vs. Senbonzakura",
+        "eng_title": "One-to-One Fight! Ichigo vs. Senbonzakura",
+        "pub_date": "27/10/2009"
+    },
+    {
+        "episode_number": "244",
+        "fr_title": "L'homme attendu... Kenpachi appara\u00eet",
+        "eng_title": "The long awaited... Kenpachi appears!",
+        "pub_date": "03/11/2009"
+    },
+    {
+        "episode_number": "245",
+        "fr_title": "Poursuivre Byakuya ! Confusion dans le Gotei !",
+        "eng_title": "Pursue Byakuya! The Confused Gotei Divisions",
+        "pub_date": "10/11/2009"
+    },
+    {
+        "episode_number": "246",
+        "fr_title": "Mission sp\u00e9ciale ! \u00c0 la rescousse du capitaine-commandant Yamamoto",
+        "eng_title": "Special Mission! Rescue Captain-Commander Yamamoto!",
+        "pub_date": "17/11/2009"
+    },
+    {
+        "episode_number": "247",
+        "fr_title": "Les Shinigamis dup\u00e9s ! La crise d'un monde qui s'effondre",
+        "eng_title": "Deceived Shinigami! The World Collapse Crisis",
+        "pub_date": "24/11/2009"
+    },
+    {
+        "episode_number": "248",
+        "fr_title": "Dragon de Glace et Dragon de Feu ! La confrontation des plus puissants",
+        "eng_title": "Dragon of Ice and Dragon of Flame! The Strongest Showdown!",
+        "pub_date": "01/12/2009"
+    },
+    {
+        "episode_number": "249",
+        "fr_title": "Le bankai de Senbonzakura ! La Bataille du monde des vivants",
+        "eng_title": "Senbonzakura's Bankai! Offense and Defense of the Living World",
+        "pub_date": "08/12/2009"
+    },
+    {
+        "episode_number": "250",
+        "fr_title": "Cet homme, pour le bien des Kuchiki",
+        "eng_title": "That Man, For the Sake of the Kuchiki",
+        "pub_date": "15/12/2009"
+    },
+    {
+        "episode_number": "251",
+        "fr_title": "Histoire obscure ! Le plus mauvais shinigami nait",
+        "eng_title": "Dark History! The Worst Shinigami is Born",
+        "pub_date": "22/12/2009"
+    },
+    {
+        "episode_number": "252",
+        "fr_title": "Byakuya, la V\u00e9rit\u00e9 sur sa Trahison",
+        "eng_title": "Byakuya, the Truth Behind his Betrayal",
+        "pub_date": "05/01/2010"
+    },
+    {
+        "episode_number": "253",
+        "fr_title": "La vraie identit\u00e9 de Muramasa est r\u00e9v\u00e9l\u00e9e !",
+        "eng_title": "Muramasa's True Identity Revealed",
+        "pub_date": "12/01/2010"
+    },
+    {
+        "episode_number": "254",
+        "fr_title": "Byakuya et Renji, la 6e division est de retour",
+        "eng_title": "Byakuya and Renji, the 6th Division Returns",
+        "pub_date": "19/01/2010"
+    },
+    {
+        "episode_number": "255",
+        "fr_title": "Chapitre final - Les histoires inconnues des Zanpakuto",
+        "eng_title": "Final Chapter\u00b7Zanpakut\u014d Unknown Tales",
+        "pub_date": "26/01/2010"
+    },
+    {
+        "episode_number": "256",
+        "fr_title": "La col\u00e8re de Byakuya ! Les \u00e9croulements de la famille Kuchiki",
+        "eng_title": "Byakuya's Anger! The Kuchiki Family Collapses",
+        "pub_date": "02/02/2010"
+    },
+    {
+        "episode_number": "257",
+        "fr_title": "Un nouvel ennemi ! La vraie nature des \u00e9p\u00e9es de b\u00eates",
+        "eng_title": "A New Enemy! The True Nature of the Sword Fiends",
+        "pub_date": "09/02/2010"
+    },
+    {
+        "episode_number": "258",
+        "fr_title": "Serpent errant, Singe tortur\u00e9",
+        "eng_title": "Stray Snake, Tortured Monkey",
+        "pub_date": "16/02/2010"
+    },
+    {
+        "episode_number": "259",
+        "fr_title": "Terreur ! Le monstre qui se cache sous terre !",
+        "eng_title": "Terror! The Monster That Lurks Underground",
+        "pub_date": "23/02/2010"
+    },
+    {
+        "episode_number": "260",
+        "fr_title": "La Conclusion !? Hisagi contre Kazeshini",
+        "eng_title": "Conclusion?! Hisagi vs. Kazeshini",
+        "pub_date": "02/03/2010"
+    },
+    {
+        "episode_number": "261",
+        "fr_title": "La personne aux capacit\u00e9s inconnues ! Orihime est prise pour cible",
+        "eng_title": "The Person with the Unknown Ability! Orihime is Targeted",
+        "pub_date": "09/03/2010"
+    },
+    {
+        "episode_number": "262",
+        "fr_title": "Haineko crie ! Les Tragiques \u00e9p\u00e9es de B\u00eates",
+        "eng_title": "The Tragic Sword Fiend! Haineko Cries!",
+        "pub_date": "16/03/2010"
+    },
+    {
+        "episode_number": "263",
+        "fr_title": "Emprisonnement ?! Senbonzakura & Zabimaru",
+        "eng_title": "Imprisonment?! Senbonzakura & Zabimaru",
+        "pub_date": "23/03/2010"
+    },
+    {
+        "episode_number": "264",
+        "fr_title": "Bataille de femmes ? Nanao VS Katen Kyokotsu",
+        "eng_title": "Battle of the Females? Katen Ky\u014dkotsu vs. Nanao!",
+        "pub_date": "30/03/2010"
+    },
+    {
+        "episode_number": "265",
+        "fr_title": "Evolution ?! La merveille du final des Ep\u00e9es de B\u00eates",
+        "eng_title": "Evolution?! The Menace of the Final Sword Fiend",
+        "pub_date": "06/04/2010"
+    },
+    {
+        "episode_number": "266",
+        "fr_title": "Ichigo VS Ulquiorra, r\u00e9ouverture !",
+        "eng_title": "Ichigo VS Ulquiorra, Resume!",
+        "pub_date": "13/04/2010"
+    },
+    {
+        "episode_number": "267",
+        "fr_title": "Les coeurs connect\u00e9s ! Le poing gauche pr\u00e9par\u00e9 \u00e0 la mort !",
+        "eng_title": "Connected Hearts! The Left Fist Prepared for Death!",
+        "pub_date": "20/04/2010"
+    },
+    {
+        "episode_number": "268",
+        "fr_title": "Haine et Jalousie, le dilemme d'Orihime",
+        "eng_title": "Hatred and Jealousy, Orihime's Dilemma",
+        "pub_date": "27/04/2010"
+    },
+    {
+        "episode_number": "269",
+        "fr_title": "Ichigo et Uryu, li\u00e9s dos \u00e0 dos.",
+        "eng_title": "Ichigo and Ury\u016b, Bonded Back to Back",
+        "pub_date": "04/05/2010"
+    },
+    {
+        "episode_number": "270",
+        "fr_title": "Les pr\u00e9mices du d\u00e9sespoir... Ichigo, la lame inaccessible",
+        "eng_title": "Beginning of Despair...Ichigo, the Unreachable Blade",
+        "pub_date": "11/05/2010"
+    },
+    {
+        "episode_number": "271",
+        "fr_title": "Ichigo meurt! Orihime, les pleurs de tristesse!",
+        "eng_title": "Ichigo Dies! Orihime, the Cry of Sorrow!",
+        "pub_date": "18/05/2010"
+    },
+    {
+        "episode_number": "272",
+        "fr_title": "Ichigo VS Ulquiorra, Conclusion !",
+        "eng_title": "Ichigo vs. Ulquiorra, Conclusion!",
+        "pub_date": "25/05/2010"
+    },
+    {
+        "episode_number": "273",
+        "fr_title": "La furie du Requin, Hallibel se lib\u00e8re !",
+        "eng_title": "Fury of the Shark! Halibel Releases",
+        "pub_date": "01/06/2010"
+    },
+    {
+        "episode_number": "274",
+        "fr_title": "Hitsugaya, les Fun\u00e9railles des 1000 fleurs du paradis de glace !",
+        "eng_title": "Hitsugaya, the Suicidal Frozen Heavens Hundred Flowers Funeral!",
+        "pub_date": "08/06/2010"
+    },
+    {
+        "episode_number": "275",
+        "fr_title": "Le souffle de la mort approche, le roi qui r\u00e8gne sur la mort !",
+        "eng_title": "The Approaching Breath of Death, the King Who Rules Over Death!",
+        "pub_date": "15/06/2010"
+    },
+    {
+        "episode_number": "276",
+        "fr_title": "La mort en un coup, le bankai de Soi fon !",
+        "eng_title": "One Hit Kill, Soi Fon, Bankai!",
+        "pub_date": "22/06/2010"
+    },
+    {
+        "episode_number": "277",
+        "fr_title": "Paroxysme ! Kyoraku VS Stark !",
+        "eng_title": "Climax! Ky\u014draku vs. Starrk!",
+        "pub_date": "29/06/2010"
+    },
+    {
+        "episode_number": "278",
+        "fr_title": "Le cauchemar revient...La r\u00e9surrection de l'espada !",
+        "eng_title": "The Nightmare Returns...Revival of the Espada",
+        "pub_date": "06/07/2010"
+    },
+    {
+        "episode_number": "279",
+        "fr_title": "Hirako et Aizen...La r\u00e9union du destin !",
+        "eng_title": "Hirako and Aizen...the Reunion of Fate!",
+        "pub_date": "13/07/2010"
+    },
+    {
+        "episode_number": "280",
+        "fr_title": "Hisagi et Tosen, le moment de la s\u00e9paration !",
+        "eng_title": "Hisagi and T\u014dsen, the Moment of Parting",
+        "pub_date": "20/07/2010"
+    },
+    {
+        "episode_number": "281",
+        "fr_title": "Couronne des Mensonges, la rancoeur de Barragan !",
+        "eng_title": "Crown of Lies, Barragan's Grudge",
+        "pub_date": "27/07/2010"
+    },
+    {
+        "episode_number": "282",
+        "fr_title": "Le pouvoir de l'\u00e2me ! L'attaque des loups !",
+        "eng_title": "Power of the Soul! The Wolves, Attack!",
+        "pub_date": "03/08/2010"
+    },
+    {
+        "episode_number": "283",
+        "fr_title": "Stark, le combat solitaire",
+        "eng_title": "Starrk, the Lone Battle",
+        "pub_date": "10/08/2010"
+    },
+    {
+        "episode_number": "284",
+        "fr_title": "Cha\u00eene de sacrifice, le pass\u00e9 de Harribel",
+        "eng_title": "Chain of Sacrifice...Halibel's Past",
+        "pub_date": "17/08/2010"
+    },
+    {
+        "episode_number": "285",
+        "fr_title": "Cent ans de rancune! La vengeance de Hiyori",
+        "eng_title": "The Hundred-Year Grudge...Hiyori's Revenge",
+        "pub_date": "24/08/2010"
+    },
+    {
+        "episode_number": "286",
+        "fr_title": "Prot\u00e9ger Karakura ! Ichigo, vers le monde r\u00e9el !",
+        "eng_title": "Protect Karakura Town! Ichigo, towards the Real World!",
+        "pub_date": "31/08/2010"
+    },
+    {
+        "episode_number": "287",
+        "fr_title": "Chronique ! Ichigo et la lampe magique !",
+        "eng_title": "Side Story! Ichigo and the Magic Lamp",
+        "pub_date": "07/09/2010"
+    },
+    {
+        "episode_number": "288",
+        "fr_title": "L'atout final ! Ichigo, vers la bataille d\u00e9cisive !",
+        "eng_title": "The Final Trump Card! Ichigo, Towards the Decisive Battle",
+        "pub_date": "14/09/2010"
+    },
+    {
+        "episode_number": "289",
+        "fr_title": "Byakuya VS Kenpachi? La m\u00eal\u00e9e commence !",
+        "eng_title": "Byakuya vs. Kenpachi?! The Melee Commences",
+        "pub_date": "21/09/2010"
+    },
+    {
+        "episode_number": "290",
+        "fr_title": "Pour l'amour de la justice?! L'homme qui a d\u00e9sert\u00e9 les Shinigami",
+        "eng_title": "For the Sake of Justice?! The Man Who Deserted the Shinigami",
+        "pub_date": "28/09/2010"
+    },
+    {
+        "episode_number": "291",
+        "fr_title": "Lutte d\u00e9sesper\u00e9e contre Aizen ! Le Shikai d'Hirako !",
+        "eng_title": "Desperate Struggle with Aizen! Hirako, Shikai!",
+        "pub_date": "05/10/2010"
+    },
+    {
+        "episode_number": "292",
+        "fr_title": "Guerre totale ! Aizen VS Shinigami",
+        "eng_title": "All Out War! Aizen vs. Shinigami",
+        "pub_date": "12/10/2010"
+    },
+    {
+        "episode_number": "293",
+        "fr_title": "Lame de la haine ! La col\u00e8re d'Hitsugaya",
+        "eng_title": "Hitsugaya, Enraged! Blade of Hatred!",
+        "pub_date": "19/10/2010"
+    },
+    {
+        "episode_number": "294",
+        "fr_title": "Impossible d'attaquer?! Genryusai scell\u00e9 !",
+        "eng_title": "Impossible to Attack? The Sealed Genry\u016bsai!",
+        "pub_date": "26/10/2010"
+    },
+    {
+        "episode_number": "295",
+        "fr_title": "Tout n'est qu'un pi\u00e8ge...Liens r\u00e9alis\u00e9s !",
+        "eng_title": "It's All A Trap...Engineered Bonds!",
+        "pub_date": "02/11/2010"
+    },
+    {
+        "episode_number": "296",
+        "fr_title": "La choquante v\u00e9rit\u00e9 ! Le myst\u00e9rieux pouvoir \u00e0 l'int\u00e9rieur d'Ichigo",
+        "eng_title": "The Shocking Truth...The Mysterious Power Within Ichigo!",
+        "pub_date": "09/11/2010"
+    },
+    {
+        "episode_number": "297",
+        "fr_title": "Extension de la lame ?! Ichigo VS Gin !",
+        "eng_title": "The Extending Blade?! Ichigo vs. Gin!",
+        "pub_date": "16/11/2010"
+    },
+    {
+        "episode_number": "298",
+        "fr_title": "Film ! Festival ! Film du Shinigami !",
+        "eng_title": "Film! Festival! Shinigami Film Festival!",
+        "pub_date": "23/11/2010"
+    },
+    {
+        "episode_number": "299",
+        "fr_title": "C\u00e9r\u00e9monie d'ouverture ! Chapitre des enfers : Prologue !",
+        "eng_title": "Theatre Opening Commemoration! Hell Chapter Prologue",
+        "pub_date": "30/11/2010"
+    },
+    {
+        "episode_number": "300",
+        "fr_title": "Urahara appara\u00eet ! Stopper Aizen !",
+        "eng_title": "Urahara Appears! Stop Aizen!",
+        "pub_date": "07/12/2010"
+    },
+    {
+        "episode_number": "301",
+        "fr_title": "Ichigo ne veut plus se battre ?! La pr\u00e9diction de Gin",
+        "eng_title": "Ichigo Loses His Fighting Spirit!? Gin's Expectation!",
+        "pub_date": "14/12/2010"
+    },
+    {
+        "episode_number": "302",
+        "fr_title": "L'ultime Getsuga Tensho ?! L'entra\u00eenement d'Ichigo !",
+        "eng_title": "The Final Getsuga Tensh\u014d!? Ichigo's Training!",
+        "pub_date": "21/12/2010"
+    },
+    {
+        "episode_number": "303",
+        "fr_title": "Le monde r\u00e9el et les Shinigamis ! \u00c9pisode sp\u00e9cial nouvel an !",
+        "eng_title": "Real World and Shinigami! The New Year Special!",
+        "pub_date": "04/01/2011"
+    },
+    {
+        "episode_number": "304",
+        "fr_title": "Une autre chronique ! Cette fois l'ennemi est un vrai monstre ?!",
+        "eng_title": "Gaiden Again! This Time's Enemy Is A Monster?",
+        "pub_date": "11/01/2011"
+    },
+    {
+        "episode_number": "305",
+        "fr_title": "Cris illusoires ! Hisagi \u00e0 l'auberge des sources chaudes !",
+        "eng_title": "Delusion Roars! Hisagi, Towards the Hot Springs Inn!",
+        "pub_date": "18/01/2011"
+    },
+    {
+        "episode_number": "306",
+        "fr_title": "Pour prot\u00e9ger ! Ichigo VS Tensa Zangetsu !",
+        "eng_title": "For the Sake of Protecting! Ichigo vs. Tensa Zangetsu!",
+        "pub_date": "25/01/2011"
+    },
+    {
+        "episode_number": "307",
+        "fr_title": "Situation urgente ! La nouvelle \u00e9volution d'Aizen !",
+        "eng_title": "Emergency Situation! Aizen, New Evolution!",
+        "pub_date": "01/02/2011"
+    },
+    {
+        "episode_number": "308",
+        "fr_title": "Adieu... Rangiku",
+        "eng_title": "Sayonara...Rangiku",
+        "pub_date": "08/02/2011"
+    },
+    {
+        "episode_number": "309",
+        "fr_title": "La confrontation prend fin ! L'ultime Getsuga Tensho est lib\u00e9r\u00e9 !",
+        "eng_title": "Fierce Fighting Conclusion! Release, the Final Getsuga Tensh\u014d!",
+        "pub_date": "15/02/2011"
+    },
+    {
+        "episode_number": "310",
+        "fr_title": "La R\u00e9solution d'Ichigo ! Le Prix de la bataille f\u00e9roce",
+        "eng_title": "Ichigo's Resolution! The Price of the Fierce Battle",
+        "pub_date": "22/02/2011"
+    },
+    {
+        "episode_number": "311",
+        "fr_title": "Le Soul d\u00e9tective \u2014 Le Karakuraizer r\u00e9apparait !",
+        "eng_title": "The Soul Detective Karakuraizer Takes Off Again!",
+        "pub_date": "01/03/2011"
+    },
+    {
+        "episode_number": "312",
+        "fr_title": "Inauguration ! Le tout nouveau Capitaine de la 2e Division !",
+        "eng_title": "Inauguration! The Brand New 2nd Division Captain!",
+        "pub_date": "08/03/2011"
+    },
+    {
+        "episode_number": "313",
+        "fr_title": "L'homme aux commandes de la 11e Division !",
+        "eng_title": "The Man Who Risks His Life in the 11th Division!",
+        "pub_date": "15/03/2011"
+    },
+    {
+        "episode_number": "314",
+        "fr_title": "Kon l'a vu ! Le secret d'une jolie femme de bureau",
+        "eng_title": "Kon is Seen! Secret of a Beautiful Office Lady",
+        "pub_date": "22/03/2011"
+    },
+    {
+        "episode_number": "315",
+        "fr_title": "L'Ami de Yachiru ! L'apparition du Shinigami de la justice !",
+        "eng_title": "Yachiru's Friend! The Shinigami of Justice Appears!",
+        "pub_date": "29/03/2011"
+    },
+    {
+        "episode_number": "316",
+        "fr_title": "Les Vacances de Hitsugaya Toshiro !",
+        "eng_title": "Toshir\u014d Hitsugaya's Holiday!",
+        "pub_date": "05/04/2011"
+    },
+    {
+        "episode_number": "317",
+        "fr_title": "Gotei 13, l'arc de l'arm\u00e9e d'invasion ! Incident inhabituel au Seireitei ?!",
+        "eng_title": "Unusual Incident in Seireitei?! Gotei 13 Invading Army Arc!",
+        "pub_date": "12/04/2011"
+    },
+    {
+        "episode_number": "318",
+        "fr_title": "Batailles entre camarades ! Renji VS Rukia ?!",
+        "eng_title": "Renji vs. Rukia?! Battle With Comrades!",
+        "pub_date": "19/04/2011"
+    },
+    {
+        "episode_number": "319",
+        "fr_title": "Le Filet de capture d'Ichigo ! S'\u00e9chapper de la Soul Society",
+        "eng_title": "Ichigo's Capture Net! Escape From Soul Society!",
+        "pub_date": "26/04/2011"
+    },
+    {
+        "episode_number": "320",
+        "fr_title": "Gotei 13, R\u00e9union dans le monde r\u00e9el !",
+        "eng_title": "Gotei 13, Gathering in the Real World!",
+        "pub_date": "03/05/2011"
+    },
+    {
+        "episode_number": "321",
+        "fr_title": "\u00c9preuve de force face \u00e0 soi-m\u00eame, Ikkaku contre Ikkaku !",
+        "eng_title": "Showdown of Mutual Self, Ikkaku vs. Ikkaku!",
+        "pub_date": "10/05/2011"
+    },
+    {
+        "episode_number": "322",
+        "fr_title": "Clash ! Rukia vs Rukia!",
+        "eng_title": "Clash! Rukia vs. Rukia!",
+        "pub_date": "17/05/2011"
+    },
+    {
+        "episode_number": "323",
+        "fr_title": "Prot\u00e9ger Ichigo ! La d\u00e9termination de Nozomi !",
+        "eng_title": "Protect Ichigo! Nozomi's Determination",
+        "pub_date": "24/05/2011"
+    },
+    {
+        "episode_number": "324",
+        "fr_title": "Reprendre le Seireitei ! Les capitaines en action !",
+        "eng_title": "Recapture Seireitei! The Captains Move!",
+        "pub_date": "31/05/2011"
+    },
+    {
+        "episode_number": "325",
+        "fr_title": "Pour ce qu'ils croient ! Hitsugaya vs Byakuya !",
+        "eng_title": "For the Sake of the Believers! Byakuya vs. Hitsugaya!",
+        "pub_date": "07/06/2011"
+    },
+    {
+        "episode_number": "326",
+        "fr_title": "Deux Hinamori, la d\u00e9termination de Hitsugaya",
+        "eng_title": "The Two Hinamoris, Hitsugaya's Resolution",
+        "pub_date": "14/06/2011"
+    },
+    {
+        "episode_number": "327",
+        "fr_title": "La fiert\u00e9 de la famille Kuchiki ! Byakuya vs Byakuya !",
+        "eng_title": "Pride of the Kuchiki Family! Byakuya vs. Byakuya!",
+        "pub_date": "21/06/2011"
+    },
+    {
+        "episode_number": "328",
+        "fr_title": "Vaincre Kageroza ! Shinigami, guerre totale !",
+        "eng_title": "Defeat Kageroza! Shinigami, All-Out War!",
+        "pub_date": "28/06/2011"
+    },
+    {
+        "episode_number": "329",
+        "fr_title": "La recherche interdite... Le secret cach\u00e9 de Nozomi !",
+        "eng_title": "The Forbidden Research...Nozomi's Hidden Secret!",
+        "pub_date": "05/07/2011"
+    },
+    {
+        "episode_number": "330",
+        "fr_title": "Je veux vivre... ! Le Zanpakut\u00f4 de Nozomi",
+        "eng_title": "I Want to Live...! Nozomi's Zanpakut\u014d",
+        "pub_date": "12/07/2011"
+    },
+    {
+        "episode_number": "331",
+        "fr_title": "Pour l'amour du combat ! Le r\u00e9veil de Nozomi !",
+        "eng_title": "For the Sake of Fighting! The Awakening Nozomi!",
+        "pub_date": "19/07/2011"
+    },
+    {
+        "episode_number": "332",
+        "fr_title": "Le plus mauvais Reigai, apparition dans le monde r\u00e9el !",
+        "eng_title": "The Most Evil Reigai, Appears in the Real World!",
+        "pub_date": "26/07/2011"
+    },
+    {
+        "episode_number": "333",
+        "fr_title": "D\u00e9truire Nozomi !? La d\u00e9cision de Genryusai",
+        "eng_title": "Destroy Nozomi?! Genryusai's Decision",
+        "pub_date": "02/08/2011"
+    },
+    {
+        "episode_number": "334",
+        "fr_title": "Le reiatsu diminuant ! Ichigo, Lutte mortelle de l'\u00e2me !",
+        "eng_title": "The Depleting Reiatsu! Ichigo, Death Struggle of the Soul!",
+        "pub_date": "09/08/2011"
+    },
+    {
+        "episode_number": "335",
+        "fr_title": "Cach\u00e9 dans le Dangai ? Un 2e Ichigo ?",
+        "eng_title": "Hiding in the Dangai? Ichigo is Alone?!",
+        "pub_date": "16/08/2011"
+    },
+    {
+        "episode_number": "336",
+        "fr_title": "\u00c0 la poursuite de Kageroza ! Infiltration dans le d\u00e9partement de recherche technologique !",
+        "eng_title": "Pursue Kageroza! Technological Development Department, Infiltration!",
+        "pub_date": "23/08/2011"
+    },
+    {
+        "episode_number": "337",
+        "fr_title": "Le d\u00e9veloppeur des \u00e2mes modifi\u00e9es",
+        "eng_title": "The Developer of the Modified Souls",
+        "pub_date": "30/08/2011"
+    },
+    {
+        "episode_number": "338",
+        "fr_title": "Les sentiments de Kon, les sentiments de Nozomi",
+        "eng_title": "Kon's Thoughts, Nozomi's Thoughts",
+        "pub_date": "06/09/2011"
+    },
+    {
+        "episode_number": "339",
+        "fr_title": "Prot\u00e9ger Ichigo ! Le lien de l'amiti\u00e9 !",
+        "eng_title": "Protect Ichigo! The Bonds of Friends!",
+        "pub_date": "13/09/2011"
+    },
+    {
+        "episode_number": "340",
+        "fr_title": "Reigai VS original, le combat f\u00e9roce, la fiert\u00e9 en jeu !",
+        "eng_title": "Reigai vs. Original, The Fierce Fighting for Gambled Pride!",
+        "pub_date": "20/09/2011"
+    },
+    {
+        "episode_number": "341",
+        "fr_title": "Arc de l'arm\u00e9e d'invasion, conclusion finale !",
+        "eng_title": "Invading Army Arc, Final Conclusion!",
+        "pub_date": "27/09/2011"
+    },
+    {
+        "episode_number": "342",
+        "fr_title": "Merci",
+        "eng_title": "Thank You",
+        "pub_date": "04/10/2011"
+    },
+    {
+        "episode_number": "343",
+        "fr_title": "Lyc\u00e9en de 3e ann\u00e9e ! Par\u00e9 pour le d\u00e9but d'un nouveau chapitre !",
+        "eng_title": "3rd Year High School Student! Dressed Up, and a New Chapter Begins!",
+        "pub_date": "11/10/2011"
+    },
+    {
+        "episode_number": "344",
+        "fr_title": "Un conflit au lyc\u00e9e ?! Ichigo et Uryuu combattent ensemble !",
+        "eng_title": "A Dispute in School?! Ichigo and Uryuu, Fight Together!",
+        "pub_date": "18/10/2011"
+    },
+    {
+        "episode_number": "345",
+        "fr_title": "Uryuu est attaqu\u00e9, une menace se tisse autour des amis !",
+        "eng_title": "Uryuu is Attacked, A Threat Draws Near the Friends!",
+        "pub_date": "25/10/2011"
+    },
+    {
+        "episode_number": "346",
+        "fr_title": "L'utilisateur du Fullbring. Ginj\u00f4 K\u00fbgo",
+        "eng_title": "The Fullbring User\u00b7K\u016bgo Ginj\u014d",
+        "pub_date": "01/11/2011"
+    },
+    {
+        "episode_number": "347",
+        "fr_title": "Un effrayant danger dans la famille Kurosaki ! La confusion d'Ichigo",
+        "eng_title": "A Creeping Danger in the Kurosaki Family?! Ichigo's Confusion!",
+        "pub_date": "08/11/2011"
+    },
+    {
+        "episode_number": "348",
+        "fr_title": "Le pouvoir du badge de shinigami rempla\u00e7ant, la fi\u00e8rt\u00e9 d'Ichigo !",
+        "eng_title": "Power of the Substitute Badge, Ichigo's \"Pride\"!",
+        "pub_date": "15/11/2011"
+    },
+    {
+        "episode_number": "349",
+        "fr_title": "Prochaine cible, la main diabolique vise Orihime !",
+        "eng_title": "Next Target, The Devil's Hand Aims at Orihime!",
+        "pub_date": "22/11/2011"
+    },
+    {
+        "episode_number": "350",
+        "fr_title": "L'homme qui a tu\u00e9 un shinigami rempla\u00e7ant ?! Tsukishima se met en mouvement",
+        "eng_title": "The Man Who Killed A Shinigami Substitute?! Tsukishima Makes His Move",
+        "pub_date": "29/11/2011"
+    },
+    {
+        "episode_number": "351",
+        "fr_title": "Le Fullbring, le pouvoir d\u00e9test\u00e9 !",
+        "eng_title": "Fullbring, The Detested Power!",
+        "pub_date": "06/12/2011"
+    },
+    {
+        "episode_number": "352",
+        "fr_title": "L'attaque de Tsukishima ! L'entrainement a \u00e9t\u00e9 sabot\u00e9 !",
+        "eng_title": "Tsukishima Attacks! The Training Has Been Thwarted",
+        "pub_date": "13/12/2011"
+    },
+    {
+        "episode_number": "353",
+        "fr_title": "Ichigo ! Ma\u00eetrise le Fullbring !",
+        "eng_title": "Ichigo, Mastering the Fullbring!",
+        "pub_date": "20/12/2011"
+    },
+    {
+        "episode_number": "354",
+        "fr_title": "Ichigo contre Ginj\u00f4 ! Dans l'espace du jeu",
+        "eng_title": "Ichigo vs. Ginj\u014d! To the Game's Space",
+        "pub_date": "27/12/2011"
+    },
+    {
+        "episode_number": "355",
+        "fr_title": "Les Shinigami entrent dans la bataille ! Le Seireitei a aussi un Nouvel An sp\u00e9cial !",
+        "eng_title": "The Shinigami Enter Battle! Seireitei Also Has a New Year Special!",
+        "pub_date": "10/01/2012"
+    },
+    {
+        "episode_number": "356",
+        "fr_title": "Un ennemi ou un ami !? Le c\u0153ur invisible de Ginj? !",
+        "eng_title": "Foe or Friend?! Ginj\u014d's Unseen Heart!",
+        "pub_date": "17/01/2012"
+    },
+    {
+        "episode_number": "357",
+        "fr_title": "La capacit\u00e9 de la menace rampante, Tsukishima !",
+        "eng_title": "Creeping Menace...Tsukishima's Ability!",
+        "pub_date": "24/01/2012"
+    },
+    {
+        "episode_number": "358",
+        "fr_title": "Clash ?! L'Xcution a frapp\u00e9 Ginj? !",
+        "eng_title": "Clash?! Xcution Attacks Ginj\u014d",
+        "pub_date": "31/01/2012"
+    },
+    {
+        "episode_number": "359",
+        "fr_title": "Le triste combat ! Ichigo contre Chad et Orihime !",
+        "eng_title": "The Sorrowful Battle! Ichigo vs. Sado & Orihime!",
+        "pub_date": "07/02/2012"
+    },
+    {
+        "episode_number": "360",
+        "fr_title": "Ichigo contre Uryu ?! Qui est le tra\u00eetre !",
+        "eng_title": "Ichigo vs. Ury\u016b?! Who is the Traitor!",
+        "pub_date": "14/02/2012"
+    },
+    {
+        "episode_number": "361",
+        "fr_title": "Une nouvelle apparence ! Rencontre avec le Gotei 13 !",
+        "eng_title": "A New Appearance! Meet the Gotei 13!",
+        "pub_date": "21/02/2012"
+    },
+    {
+        "episode_number": "362",
+        "fr_title": "Reprise! Kurosaki Ichigo, le Shinigami Rempla\u00e7ant !",
+        "eng_title": "Revival! Substitute Shinigami\uff65Ichigo Kurosaki!",
+        "pub_date": "28/02/2012"
+    },
+    {
+        "episode_number": "363",
+        "fr_title": "Clash ! Les Shinigami contre l'Xcution !",
+        "eng_title": "Fierce Fight! Shinigami vs. XCUTION!",
+        "pub_date": "06/03/2012"
+    },
+    {
+        "episode_number": "364",
+        "fr_title": "Souvenir Troubl\u00e9 de Byakuya !",
+        "eng_title": "Desperate Struggle!? Byakuya's Troubled Memories",
+        "pub_date": "13/03/2012"
+    },
+    {
+        "episode_number": "365",
+        "fr_title": "Ichigo contre Ginj? !",
+        "eng_title": "Ichigo vs. Ginj\u014d! The Secret of the Substitute Badge",
+        "pub_date": "20/03/2012"
+    },
+    {
+        "episode_number": "366",
+        "fr_title": "L'histoire Change, mais le c\u0153ur Reste Inchang\u00e9 !",
+        "eng_title": "Changing History, Unchanging Heart",
+        "pub_date": "27/03/2012"
+    }
+]
