@@ -5,6 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 
 import random
 import json
+import re
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,7 +14,7 @@ from selenium.common.exceptions import TimeoutException, ElementClickIntercepted
 import undetected_chromedriver as uc
 from pprint import pprint
 from utils.file_operation import write_to_file
-from utils.string_operation import split_string_by_add
+from utils.string_operation import split_string_by_add, extract_number_from_anime_title
 from utils.dict_operation import nautiljon_mapping, dict_map_field_names, genre_translation
 
 USER_AGENTS = [
@@ -103,6 +104,83 @@ def process_anime_episodes():
         print("-" * 50)
     return episodes
 
+def process_seasons(anime):
+    # logic is the following,get the first h3.nowrapp topm3 more check if text is equal to Anime up until the next h3.nowrapp topm3 more
+    # get the links of the seasons, add a counter from the anime name, process it to get the season number determine if it is a season or an episode by using regex
+
+
+    driver.get("https://www.nautiljon.com/animes/haikyu+!!.html")
+
+    try:
+        accept_button = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//button[@id='didomi-notice-agree-button']"))
+        )
+        accept_button.click()
+        print("Clicked the consent button.")
+    except Exception as e:
+        print(f"Error clicking the consent button: {e}")
+
+    anime_sequel = re.compile(r"(season|saison)", re.IGNORECASE)
+    movie_sequel = re.compile(r"(movie|film)", re.IGNORECASE)
+    anime_name = anime.get("name", "")
+
+    liaison_elements_web_containers = driver.find_elements(By.CLASS_NAME, "imagesBorder")
+    is_anime = True
+    anime_liaisons = []
+    for liaisons in liaison_elements_web_containers:
+        a = {"sequel_title": "", "sequel_type": "", "sequel_number": "", "sequel_img_url": "", "sequel_url": ""}
+        try:
+            # Attempt to find the h3 element
+            elements = liaisons.find_elements(By.CSS_SELECTOR, "h3.topm3.exampleClass")
+            print("normal elements", len(elements))
+            h3_elements = [elem for elem in elements if len(elem.get_attribute('class').split()) == 2]
+            print("filtered elements", len(h3_elements))
+
+            if h3_elements:
+                for h3_element in h3_elements:
+                    if h3_element.text == "Animes":
+                        is_anime = True
+                        break
+                else:
+                    is_anime = False
+            else:
+                is_anime = True
+
+            if is_anime:
+                # Extract information for the anime
+                try:
+                    anime_link = liaisons.find_element(By.TAG_NAME, "a")
+                    nautiljon_anime_url = anime_link.get_attribute("href")
+                    anime_title = anime_link.get_attribute("title")
+                    anime_img_url = liaisons.find_element(By.TAG_NAME, "img").get_attribute("src")
+
+                    # Regex to catch if anime is movie or season
+                    sequel_number = extract_number_from_anime_title(anime_title, anime_name)
+
+                    if anime_sequel.search(anime_title):
+                        a["sequel_type"] = "anime"
+                        a["sequel_number"] = sequel_number
+                    elif movie_sequel.search(anime_title):
+                        a["sequel_type"] = "movie"
+                        a["sequel_number"] = sequel_number
+                    else:
+                        a["sequel_type"] = "OAV"
+                        a["sequel_number"] = sequel_number
+
+                    a["sequel_title"] = anime_title
+                    a["sequel_img_url"] = anime_img_url
+                    a["sequel_url"] = nautiljon_anime_url
+
+                    anime_liaisons.append(a)
+                except Exception as e:
+                    print(f"Error extracting anime details: {e}")
+                    continue
+        except Exception as e:
+            print(f"Error finding h3 tag or processing: {e}")
+            continue
+
+    print(anime_liaisons, "anime_liaisons")
+
 def scrape_anime_names(anime_name):
     try:
         formatted_anime_name = split_string_by_add(anime_name)
@@ -189,7 +267,9 @@ def scrape_anime_names(anime_name):
         print(f"An error occurred: {e}")
 
 try:
-    scrape_anime_names("bleach")
+    # scrape_anime_names("bleach")
+    anime = {"name": "haikyu !!"}
+    process_seasons(anime)
     driver.quit()
 
 except Exception as e:
