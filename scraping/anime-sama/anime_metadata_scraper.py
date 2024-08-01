@@ -16,6 +16,7 @@ from pprint import pprint
 from utils.file_operation import write_to_file
 from utils.string_operation import split_string_by_add, extract_number_from_anime_title
 from utils.dict_operation import nautiljon_mapping, dict_map_field_names, genre_translation
+from utils.constants import haikyuu
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
@@ -104,9 +105,12 @@ def process_anime_episodes():
         print("-" * 50)
     return episodes
 
-def process_seasons(anime):
-    # logic is the following,get the first h3.nowrapp topm3 more check if text is equal to Anime up until the next h3.nowrapp topm3 more
-    # get the links of the seasons, add a counter from the anime name, process it to get the season number determine if it is a season or an episode by using regex
+def process_seasons(anime, existing_titles=None):
+    if existing_titles is None:
+        existing_titles = set()
+    else:
+        existing_titles = set(existing_titles)
+    print(existing_titles, "existing_titles")
     try:
         accept_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//button[@id='didomi-notice-agree-button']"))
@@ -121,23 +125,33 @@ def process_seasons(anime):
     anime_name = anime.get("name", "")
     liaisons_container = driver.find_element(By.ID, "liaisons")
     liaison_elements_web_containers = liaisons_container.find_elements(By.CLASS_NAME, "imagesBorder")
-    anime_liaisons = []
+    anime_liaisons = {}
     expected_keyword = "animes"
+    nb_of_season = anime.get("nb_of_season", 1)
+    count = 1
+
     for liaisons in liaison_elements_web_containers:
         a = {"sequel_title": "", "sequel_type": "", "sequel_number": "", "sequel_img_url": "", "sequel_url": ""}
 
-        # Extract information for the anime
         try:
             anime_link = liaisons.find_element(By.TAG_NAME, "a")
             nautiljon_anime_url = anime_link.get_attribute("href")
             anime_title = anime_link.get_attribute("title")
             anime_img_url = liaisons.find_element(By.TAG_NAME, "img").get_attribute("src")
 
-            # Regex to catch if anime is movie or season
+            # Check for duplicates
+            normalized_title = anime_title.lower().strip()
+            if normalized_title in existing_titles:
+                print(f"Duplicate sequel found: {anime_title}, skipping...")
+                continue
+
+
+            existing_titles.add(normalized_title)
+
+            # Extract season or movie number
             sequel_number = extract_number_from_anime_title(anime_title, anime_name)
 
-            # process if sequel is anime
-        
+            # Verify URL structure
             base_url = "https://www.nautiljon.com/"
             if base_url in nautiljon_anime_url:
                 remainder = nautiljon_anime_url.replace(base_url, "", 1)
@@ -145,16 +159,17 @@ def process_seasons(anime):
                 raise Exception(f"Base URL '{base_url}' not found in the given URL.")
 
             split_remainder = remainder.split('/')
-            print(split_remainder, "remainder")
 
             if split_remainder[0] == expected_keyword:
                 print("The URL structure is as expected.")
             else:
                 raise Exception(f"Sequel {split_remainder[1]} is not an Anime or a Manga")
-            
+
+            # Determine sequel type
             if anime_sequel.search(anime_title):
                 a["sequel_type"] = "anime"
                 a["sequel_number"] = sequel_number
+                nb_of_season += 1
             elif movie_sequel.search(anime_title):
                 a["sequel_type"] = "movie"
                 a["sequel_number"] = sequel_number
@@ -165,25 +180,33 @@ def process_seasons(anime):
             a["sequel_title"] = anime_title
             a["sequel_img_url"] = anime_img_url
             a["sequel_url"] = nautiljon_anime_url
+            anime["nautiljon_data"]["nb_of_season"] = nb_of_season
 
-            anime_liaisons.append(a)
+            anime_liaisons[count] = a
+            count += 1
         except Exception as e:
             print(f"Error extracting anime details: {e}")
             continue
-    anime["sequel"] = anime_liaisons
 
-def scrape_anime_names(anime_name):
+    return anime_liaisons
+
+def search_anime_name(anime_name):
+    formatted_anime_name = split_string_by_add(anime_name)
+    driver.get("https://www.nautiljon.com/animes/" + formatted_anime_name + ".html")
+
+def scrape_anime_metadata(anime_name, anime_url=None, anime_to_exclude=None, parent_anime=None):
     try:
-        formatted_anime_name = split_string_by_add(anime_name)
-        driver.get("https://www.nautiljon.com/animes/" + formatted_anime_name + ".html")
-        anime = {"name": anime_name, "nautiljon_data": {}}
+        if anime_url is None:
+            search_anime_name(anime_name)
+        else:
+            driver.get(anime_url)
 
+        anime = {"name": anime_name, "nautiljon_data": {"nb_of_season": 1}}
         synopsis = driver.find_element(By.CLASS_NAME, "description")
         anime["nautiljon_data"]["synopsis"] = [synopsis.text]
-        
+
         metadata_lists_container = driver.find_element(By.CSS_SELECTOR, "ul.mb10")
         metadata_lists = metadata_lists_container.find_elements(By.TAG_NAME, "li")
-
 
         process_genres_and_themes(anime, metadata_lists)
 
@@ -195,7 +218,7 @@ def scrape_anime_names(anime_name):
                 anime["nautiljon_data"][field_name] = value_text
             elif len(span_elements) == 1:
                 field_name = span_elements[0].text.rstrip(':').strip()
-                if field_name not in ["Genres", "Thèmes"]:  # Exclude already processed fields
+                if field_name not in ["Genres", "Thèmes"]:
                     full_text = list_item.text
                     following_text = full_text.replace(span_elements[0].text, '').strip()
                     anime["nautiljon_data"][field_name] = [following_text]
@@ -203,10 +226,8 @@ def scrape_anime_names(anime_name):
                 try:
                     field_name = list_item.find_element(By.CSS_SELECTOR, 'span.bold').text.rstrip(':').strip()
                 except:
-                    # In case there is no span.bold, we use a different approach
                     field_name = list_item.text.split(':')[0].strip()
 
-                # Handling links with nested spans for other fields
                 if list_item.find_elements(By.TAG_NAME, 'a'):
                     links = list_item.find_elements(By.TAG_NAME, 'a')
                     link_texts = [link.text for link in links if link.text]
@@ -221,17 +242,15 @@ def scrape_anime_names(anime_name):
             anime["nautiljon_data"]["average_rating"] = [rating_value]
         except:
             anime["nautiljon_data"]["average_rating"] = ["No rating available"]
-
         try:
             rating_count = driver.find_element(By.CSS_SELECTOR, '[itemprop="ratingCount"]').text
             anime["nautiljon_data"]["member_count"] = [rating_count]
         except:
             anime["nautiljon_data"]["member_count"] = ["No member count available"]
 
-        # Extract the synopsis if it exists on the page
         statistics_star_web_element = driver.find_element(By.CSS_SELECTOR, "div.moyNote")
         statistics_rating_web_element = statistics_star_web_element.find_element(By.CSS_SELECTOR,"[itemprop='ratingValue']")
-        
+
         statistics_ranks_web_element_container = driver.find_element(By.CSS_SELECTOR, "div.topsAll")
         statistics_rank_web_elements = statistics_ranks_web_element_container.find_elements(By.CSS_SELECTOR, "span.number")
         statistics_rank_names_web_elements = statistics_ranks_web_element_container.find_elements(By.CSS_SELECTOR, "a.tooltip")
@@ -245,21 +264,58 @@ def scrape_anime_names(anime_name):
         anime["nautiljon_data"]["statistics"] = statistics
         anime["nautiljon_data"]["img_url"] = [img_url_web_element.get_attribute("href")]
 
-        # get number of episodes in the current season
+        sequels = process_seasons(anime, existing_titles=anime_to_exclude)
+        anime["nautiljon_data"]["sequels"] = sequels
 
         episodes = process_anime_episodes()
         anime["nautiljon_data"]["episodes"] = episodes
-
-        process_seasons(anime)
-
-        write_to_file("anime_metadata.json", anime)
-
-        anime["nautiljon_data"] = dict_map_field_names(anime["nautiljon_data"], nautiljon_mapping)
+        return anime
     except Exception as e:
         print(f"An error occurred: {e}")
+        return None
 
+def process_sequel_metadata(anime, anime_to_exclude=None):
+    if anime_to_exclude is None:
+        anime_to_exclude = []
+
+    anime_name = anime.get("name")
+    if anime_name and anime_name not in anime_to_exclude:
+        anime_to_exclude.append(anime_name)
+
+    sequels = anime.get("nautiljon_data", {}).get("sequels", {})
+    anime_sequels_url = []
+
+    for key, seq in sequels.items():
+        seq_title = seq.get("sequel_title")
+        if seq_title not in anime_to_exclude:
+            seq_type = seq.get("sequel_type")
+            seq_url = seq.get("sequel_url")
+            seq_number = seq.get("sequel_number")
+            if seq_type == "anime" and seq_url:
+                anime_sequels_url.append((seq_number, seq_title, seq_url))
+
+    all_sequels_metadata = []
+
+    for anime_sequel in anime_sequels_url:
+        order, anime_title, anime_url = anime_sequel
+
+        # Check if already processed
+        if anime_title in anime_to_exclude:
+            print(f"Already processed or excluded: {anime_title}, skipping...")
+            continue
+
+        anime_to_exclude.append(anime_title)
+        anime_metadata = scrape_anime_metadata(anime_title, anime_url, anime_to_exclude, anime)
+        if anime_metadata:
+            all_sequels_metadata.append(anime_metadata)
+    
+    write_to_file("anime_sequel_data.json", all_sequels_metadata)
 try:
-    scrape_anime_names("haikyu !!")
+    # anime = scrape_anime_names("haikyu !!")
+
+    # write_to_file("anime_metadata.json", anime)
+    process_sequel_metadata(haikyuu)
+    # process related animes
     driver.quit()
 
 except Exception as e:
