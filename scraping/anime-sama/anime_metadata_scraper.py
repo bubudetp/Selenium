@@ -107,10 +107,6 @@ def process_anime_episodes():
 def process_seasons(anime):
     # logic is the following,get the first h3.nowrapp topm3 more check if text is equal to Anime up until the next h3.nowrapp topm3 more
     # get the links of the seasons, add a counter from the anime name, process it to get the season number determine if it is a season or an episode by using regex
-
-
-    driver.get("https://www.nautiljon.com/animes/haikyu+!!.html")
-
     try:
         accept_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//button[@id='didomi-notice-agree-button']"))
@@ -123,63 +119,58 @@ def process_seasons(anime):
     anime_sequel = re.compile(r"(season|saison)", re.IGNORECASE)
     movie_sequel = re.compile(r"(movie|film)", re.IGNORECASE)
     anime_name = anime.get("name", "")
-
-    liaison_elements_web_containers = driver.find_elements(By.CLASS_NAME, "imagesBorder")
-    is_anime = True
+    liaisons_container = driver.find_element(By.ID, "liaisons")
+    liaison_elements_web_containers = liaisons_container.find_elements(By.CLASS_NAME, "imagesBorder")
     anime_liaisons = []
+    expected_keyword = "animes"
     for liaisons in liaison_elements_web_containers:
         a = {"sequel_title": "", "sequel_type": "", "sequel_number": "", "sequel_img_url": "", "sequel_url": ""}
+
+        # Extract information for the anime
         try:
-            # Attempt to find the h3 element
-            elements = liaisons.find_elements(By.CSS_SELECTOR, "h3.topm3.exampleClass")
-            print("normal elements", len(elements))
-            h3_elements = [elem for elem in elements if len(elem.get_attribute('class').split()) == 2]
-            print("filtered elements", len(h3_elements))
+            anime_link = liaisons.find_element(By.TAG_NAME, "a")
+            nautiljon_anime_url = anime_link.get_attribute("href")
+            anime_title = anime_link.get_attribute("title")
+            anime_img_url = liaisons.find_element(By.TAG_NAME, "img").get_attribute("src")
 
-            if h3_elements:
-                for h3_element in h3_elements:
-                    if h3_element.text == "Animes":
-                        is_anime = True
-                        break
-                else:
-                    is_anime = False
+            # Regex to catch if anime is movie or season
+            sequel_number = extract_number_from_anime_title(anime_title, anime_name)
+
+            # process if sequel is anime
+        
+            base_url = "https://www.nautiljon.com/"
+            if base_url in nautiljon_anime_url:
+                remainder = nautiljon_anime_url.replace(base_url, "", 1)
             else:
-                is_anime = True
+                raise Exception(f"Base URL '{base_url}' not found in the given URL.")
 
-            if is_anime:
-                # Extract information for the anime
-                try:
-                    anime_link = liaisons.find_element(By.TAG_NAME, "a")
-                    nautiljon_anime_url = anime_link.get_attribute("href")
-                    anime_title = anime_link.get_attribute("title")
-                    anime_img_url = liaisons.find_element(By.TAG_NAME, "img").get_attribute("src")
+            split_remainder = remainder.split('/')
+            print(split_remainder, "remainder")
 
-                    # Regex to catch if anime is movie or season
-                    sequel_number = extract_number_from_anime_title(anime_title, anime_name)
+            if split_remainder[0] == expected_keyword:
+                print("The URL structure is as expected.")
+            else:
+                raise Exception(f"Sequel {split_remainder[1]} is not an Anime or a Manga")
+            
+            if anime_sequel.search(anime_title):
+                a["sequel_type"] = "anime"
+                a["sequel_number"] = sequel_number
+            elif movie_sequel.search(anime_title):
+                a["sequel_type"] = "movie"
+                a["sequel_number"] = sequel_number
+            else:
+                a["sequel_type"] = "OAV"
+                a["sequel_number"] = sequel_number
 
-                    if anime_sequel.search(anime_title):
-                        a["sequel_type"] = "anime"
-                        a["sequel_number"] = sequel_number
-                    elif movie_sequel.search(anime_title):
-                        a["sequel_type"] = "movie"
-                        a["sequel_number"] = sequel_number
-                    else:
-                        a["sequel_type"] = "OAV"
-                        a["sequel_number"] = sequel_number
+            a["sequel_title"] = anime_title
+            a["sequel_img_url"] = anime_img_url
+            a["sequel_url"] = nautiljon_anime_url
 
-                    a["sequel_title"] = anime_title
-                    a["sequel_img_url"] = anime_img_url
-                    a["sequel_url"] = nautiljon_anime_url
-
-                    anime_liaisons.append(a)
-                except Exception as e:
-                    print(f"Error extracting anime details: {e}")
-                    continue
+            anime_liaisons.append(a)
         except Exception as e:
-            print(f"Error finding h3 tag or processing: {e}")
+            print(f"Error extracting anime details: {e}")
             continue
-
-    print(anime_liaisons, "anime_liaisons")
+    anime["sequel"] = anime_liaisons
 
 def scrape_anime_names(anime_name):
     try:
@@ -255,10 +246,11 @@ def scrape_anime_names(anime_name):
         anime["nautiljon_data"]["img_url"] = [img_url_web_element.get_attribute("href")]
 
         # get number of episodes in the current season
-        # Wait for the button to be clickable and then click it
 
         episodes = process_anime_episodes()
         anime["nautiljon_data"]["episodes"] = episodes
+
+        process_seasons(anime)
 
         write_to_file("anime_metadata.json", anime)
 
@@ -267,9 +259,7 @@ def scrape_anime_names(anime_name):
         print(f"An error occurred: {e}")
 
 try:
-    # scrape_anime_names("bleach")
-    anime = {"name": "haikyu !!"}
-    process_seasons(anime)
+    scrape_anime_names("haikyu !!")
     driver.quit()
 
 except Exception as e:
