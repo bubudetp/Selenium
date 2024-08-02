@@ -122,6 +122,9 @@ def process_seasons(anime, existing_titles=None):
 
     anime_sequel = re.compile(r"(season|saison)", re.IGNORECASE)
     movie_sequel = re.compile(r"(movie|film)", re.IGNORECASE)
+    anime_type_sequel = re.compile(r"(Série)")
+    movie_type_sequel = re.compile(r"(Film)")
+
     anime_name = anime.get("name", "")
     liaisons_container = driver.find_element(By.ID, "liaisons")
     liaison_elements_web_containers = liaisons_container.find_elements(By.CLASS_NAME, "imagesBorder")
@@ -138,7 +141,7 @@ def process_seasons(anime, existing_titles=None):
             nautiljon_anime_url = anime_link.get_attribute("href")
             anime_title = anime_link.get_attribute("title")
             anime_img_url = liaisons.find_element(By.TAG_NAME, "img").get_attribute("src")
-
+            type_text = liaisons.find_element(By.CSS_SELECTOR, "div.infos_small").text
             # Check for duplicates
             normalized_title = anime_title.lower().strip()
             if normalized_title in existing_titles:
@@ -166,11 +169,13 @@ def process_seasons(anime, existing_titles=None):
                 raise Exception(f"Sequel {split_remainder[1]} is not an Anime or a Manga")
 
             # Determine sequel type
-            if anime_sequel.search(anime_title):
+
+            print(type_text, "type text")
+            if anime_type_sequel.search(type_text):
                 a["sequel_type"] = "anime"
                 a["sequel_number"] = sequel_number
                 nb_of_season += 1
-            elif movie_sequel.search(anime_title):
+            elif movie_type_sequel.search(type_text):
                 a["sequel_type"] = "movie"
                 a["sequel_number"] = sequel_number
             else:
