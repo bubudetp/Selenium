@@ -199,34 +199,51 @@ def search_anime_name(anime_name):
     formatted_anime_name = split_string_by_add(anime_name)
     driver.get("https://www.nautiljon.com/animes/" + formatted_anime_name + ".html")
 
-def scrape_anime_metadata(anime_name, anime_url=None, anime_to_exclude=None, parent_anime=None):
+def scrape_anime_data(anime_name, anime_url=None, is_sql=False):
     try:
         if anime_url is None:
             search_anime_name(anime_name)
         else:
             driver.get(anime_url)
 
-        anime = {"name": anime_name, "nautiljon_data": {"nb_of_season": 1}}
+        # Initialize the data structure
+        anime_data = {
+            "name": anime_name,
+            "nautiljon_data": {
+                "nb_of_season": 1,
+                "sequels": {
+                    "sequel_list": set()
+                },
+                "synopsis": [],
+                "metadata": {},
+                "average_rating": "No rating available",
+                "member_count": "No member count available",
+                "statistics": {},
+                "img_url": "",
+                "episodes": []
+            }
+        }
+
         synopsis = driver.find_element(By.CLASS_NAME, "description")
-        anime["nautiljon_data"]["synopsis"] = [synopsis.text]
+        anime_data["nautiljon_data"]["synopsis"] = [synopsis.text]
 
         metadata_lists_container = driver.find_element(By.CSS_SELECTOR, "ul.mb10")
         metadata_lists = metadata_lists_container.find_elements(By.TAG_NAME, "li")
 
-        process_genres_and_themes(anime, metadata_lists)
+        process_genres_and_themes(anime_data, metadata_lists)
 
         for list_item in metadata_lists:
             span_elements = list_item.find_elements(By.TAG_NAME, "span")
             if len(span_elements) >= 2:
                 field_name = span_elements[0].text.rstrip(":").strip()
                 value_text = [span.text for span in span_elements[1:]]
-                anime["nautiljon_data"][field_name] = value_text
+                anime_data["nautiljon_data"]["metadata"][field_name] = value_text
             elif len(span_elements) == 1:
                 field_name = span_elements[0].text.rstrip(':').strip()
                 if field_name not in ["Genres", "Thèmes"]:
                     full_text = list_item.text
                     following_text = full_text.replace(span_elements[0].text, '').strip()
-                    anime["nautiljon_data"][field_name] = [following_text]
+                    anime_data["nautiljon_data"]["metadata"][field_name] = [following_text]
             else:
                 try:
                     field_name = list_item.find_element(By.CSS_SELECTOR, 'span.bold').text.rstrip(':').strip()
@@ -237,22 +254,23 @@ def scrape_anime_metadata(anime_name, anime_url=None, anime_to_exclude=None, par
                     links = list_item.find_elements(By.TAG_NAME, 'a')
                     link_texts = [link.text for link in links if link.text]
                     value_text = link_texts
-                    anime["nautiljon_data"][field_name] = value_text
+                    anime_data["nautiljon_data"]["metadata"][field_name] = value_text
                 else:
                     value_text = list_item.text.replace(field_name, '').strip()
-                    anime["nautiljon_data"][field_name] = [value_text]
+                    anime_data["nautiljon_data"]["metadata"][field_name] = [value_text]
 
         try:
             rating_value = driver.find_element(By.CSS_SELECTOR, '[itemprop="ratingValue"]').text
-            anime["nautiljon_data"]["average_rating"] = [rating_value]
+            anime_data["nautiljon_data"]["average_rating"] = rating_value
         except:
-            anime["nautiljon_data"]["average_rating"] = ["No rating available"]
+            pass
         try:
             rating_count = driver.find_element(By.CSS_SELECTOR, '[itemprop="ratingCount"]').text
-            anime["nautiljon_data"]["member_count"] = [rating_count]
+            anime_data["nautiljon_data"]["member_count"] = rating_count
         except:
-            anime["nautiljon_data"]["member_count"] = ["No member count available"]
+            pass
 
+        # Extract statistics
         statistics_star_web_element = driver.find_element(By.CSS_SELECTOR, "div.moyNote")
         statistics_rating_web_element = statistics_star_web_element.find_element(By.CSS_SELECTOR,"[itemprop='ratingValue']")
 
@@ -260,32 +278,37 @@ def scrape_anime_metadata(anime_name, anime_url=None, anime_to_exclude=None, par
         statistics_rank_web_elements = statistics_ranks_web_element_container.find_elements(By.CSS_SELECTOR, "span.number")
         statistics_rank_names_web_elements = statistics_ranks_web_element_container.find_elements(By.CSS_SELECTOR, "a.tooltip")
 
-        statistics = {}
         for i in range(len(statistics_rank_web_elements) - 1):
-            statistics[statistics_rank_names_web_elements[i].text] = statistics_rank_web_elements[i].text
-        statistics["statistics_rating"] = statistics_rating_web_element.text
+            anime_data["nautiljon_data"]["statistics"][statistics_rank_names_web_elements[i].text] = statistics_rank_web_elements[i].text
+        anime_data["nautiljon_data"]["statistics"]["statistics_rating"] = statistics_rating_web_element.text
 
+        # Extract image URL
         img_url_web_element = driver.find_element(By.CSS_SELECTOR, "a.cboxImage")
-        anime["nautiljon_data"]["statistics"] = statistics
-        anime["nautiljon_data"]["img_url"] = [img_url_web_element.get_attribute("href")]
+        anime_data["nautiljon_data"]["img_url"] = img_url_web_element.get_attribute("href")
 
-        sequels = process_seasons(anime, existing_titles=anime_to_exclude)
-        anime["nautiljon_data"]["sequels"] = sequels
+        # Process sequels if applicable
+        if is_sql:
+            anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(anime_name)
+            sequels = process_seasons(anime_data)
+            anime_data["nautiljon_data"]["sequels"]["sequel_list"].update(sequels)
+        else:
+            anime_data["nautiljon_data"]["sequels"]["sequel_list"] = set()
 
+        # Process episodes
         episodes = process_anime_episodes()
-        anime["nautiljon_data"]["episodes"] = episodes
-        return anime
+        anime_data["nautiljon_data"]["episodes"] = episodes
+
+        return anime_data
+
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
 
-def process_sequel_metadata(anime, anime_to_exclude=None):
-    if anime_to_exclude is None:
-        anime_to_exclude = []
-
+def process_sequel_metadata(anime):
+    anime_to_exclude = anime["nautiljon_data"]["sequels"]["sequel_list"].values()
     anime_name = anime.get("name")
     if anime_name and anime_name not in anime_to_exclude:
-        anime_to_exclude.append(anime_name)
+        anime_to_exclude.add(anime_name)
 
     sequels = anime.get("nautiljon_data", {}).get("sequels", {})
     anime_sequels_url = []
@@ -309,20 +332,29 @@ def process_sequel_metadata(anime, anime_to_exclude=None):
             print(f"Already processed or excluded: {anime_title}, skipping...")
             continue
 
-        anime_to_exclude.append(anime_title)
-        anime_metadata = scrape_anime_metadata(anime_title, anime_url, anime_to_exclude, anime)
+        anime_to_exclude.add(anime_title)
+        anime_metadata = scrape_anime_data(anime_title, anime_url, True)
         if anime_metadata:
             all_sequels_metadata.append(anime_metadata)
+    return all_sequels_metadata
     
-    write_to_file("anime_sequel_data.json", all_sequels_metadata)
 try:
-    # anime = scrape_anime_names("haikyu !!")
+    anime = scrape_anime_data("haikyu !!")
 
-    # write_to_file("anime_metadata.json", anime)
-    process_sequel_metadata(haikyuu)
+    sequel_metadata = process_sequel_metadata(anime)
+
+    anime["nautiljon_data"]["sequels"].append(sequel_metadata)
+    write_to_file("anime_metadatass.json", anime)
     # process related animes
     driver.quit()
 
 except Exception as e:
     print(f"An error occurred: {e}")
     driver.quit()
+
+# season catcher, current system works
+    
+    # for these cases
+        # 0. Initial = scrape all sequels + metadata of anime  
+    #   : 1. loop = scrape metadata for sequal got in the initial scraping
+    #     2. in the loop, scrape the sequels of the sequel got at each scraping and checks if the sequel has already been scraped or not
