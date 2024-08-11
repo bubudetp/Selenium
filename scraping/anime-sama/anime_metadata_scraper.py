@@ -35,6 +35,7 @@ chrome_options.page_load_strategy = 'eager'
 driver = uc.Chrome(options=chrome_options)
 
 base_url = "https://anime-sama.fr/catalogue/"
+nautiljon_base_url = "https://www.nautiljon.com/"
 
 def scroll_to_bottom():
     """Scroll to the bottom of the page to ensure all content is loaded."""
@@ -57,7 +58,10 @@ def process_genres_and_themes(anime, metadata_lists):
                     translated_texts = translate_genres_or_themes(link_texts)
                     anime["nautiljon_data"][field_name] = translated_texts
 
-def process_anime_episodes():
+def process_anime_episodes(driver, url=None):
+    if url:
+        print(url, "printing the url")
+        driver.get(url)
     try:
         accept_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//button[@id='didomi-notice-agree-button']"))
@@ -66,6 +70,7 @@ def process_anime_episodes():
         print("Clicked the consent button.")
     except Exception as e:
         print(f"Error clicking the consent button: {e}")
+    
 
     episode_container_web_element = driver.find_element(By.ID, "episodes")
     metadata_episodes_container = episode_container_web_element.find_elements(By.TAG_NAME, "tr")
@@ -179,7 +184,7 @@ def process_seasons(anime, existing_titles=None):
                 a["sequel_type"] = "movie"
                 a["sequel_number"] = sequel_number
             else:
-                a["sequel_type"] = "OAV"
+                a["sequel_type"] = "anime"
                 a["sequel_number"] = sequel_number
 
             print(anime_title, "anime_title")
@@ -290,50 +295,53 @@ def scrape_anime_data(anime_name, anime_url=None):
         img_url_web_element = driver.find_element(By.CSS_SELECTOR, "a.cboxImage")
         anime_data["nautiljon_data"]["img_url"] = img_url_web_element.get_attribute("href")
 
-        # Process sequels if applicable
+        # Process episodes
+        episodes = process_anime_episodes(driver)
+        anime_data["nautiljon_data"]["episodes"] = episodes
+
+        # Process sequels if applicable    
         anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(anime_name)
         sequels = process_seasons(anime_data)
         for key, sequel in sequels.items():
             for k, value in sequel.items():
                 if k == "sequel_title" and value:
-                    print("ANIASDKADK TITLT ASDFPASLD SD", value)
                     anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(value)
-                
-        # Process episodes
-        episodes = process_anime_episodes()
-        anime_data["nautiljon_data"]["episodes"] = episodes
+                    processed_anime_name = nautiljon_base_url+ "animes/" + split_string_by_add(value) + ".html"
+                    
+                    if value not in anime_data["nautiljon_data"]["sequels"]:
+                        anime_data["nautiljon_data"]["sequels"][value] = {}
+                    anime_data["nautiljon_data"]["sequels"][value]["episodes"] = process_anime_episodes(driver, processed_anime_name)
 
         return anime_data
 
     except Exception as e:
         print(f"An error occurred: {e}")
         traceback.print_exc()
-        
+
         return None
 
 def process_sequel_metadata(anime):
     if not anime:
         return
-     
+    
     anime_to_exclude = set(anime["nautiljon_data"]["sequels"]["sequel_list"])
     anime_name = anime.get("name")
     if anime_name and anime_name not in anime_to_exclude:
         anime_to_exclude.add(anime_name)
 
-    sequels = anime.get("nautiljon_data", {}).get("sequels", {})
+    sequels = anime.get("nautiljon_data", {}).get("sequels", {}).get("sequels_list", [])
     anime_sequels_url = []
 
-    for key, seq in sequels.items():
-        if isinstance(seq, dict):
-            seq_title = seq.get("sequel_title")
-            if seq_title not in anime_to_exclude:
-                seq_type = seq.get("sequel_type")
-                seq_url = seq.get("sequel_url")
-                seq_number = seq.get("sequel_number")
-                if seq_type == "anime" and seq_url:
-                    anime_sequels_url.append((seq_number, seq_title, seq_url))
-        else:
-            print(f"sequel data is not a dictionary")
+    for seq in sequels:
+        seq_title = seq.get("sequel_title")
+        print(seq_title, "printing the sequel title")
+        if seq_title not in anime_to_exclude:
+            seq_type = seq.get("sequel_type")
+            seq_url = seq.get("sequel_url")
+            seq_number = seq.get("sequel_number")
+            if seq_type == "anime" and seq_url:
+                anime_sequels_url.append((seq_number, seq_title, seq_url))
+    
     all_sequels_metadata = []
 
     for anime_sequel in anime_sequels_url:
