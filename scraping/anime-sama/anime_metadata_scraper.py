@@ -184,7 +184,7 @@ def process_seasons(anime, existing_titles=None):
                 a["sequel_type"] = "movie"
                 a["sequel_number"] = sequel_number
             else:
-                a["sequel_type"] = "anime"
+                a["sequel_type"] = "oav"
                 a["sequel_number"] = sequel_number
 
             print(anime_title, "anime_title")
@@ -304,14 +304,24 @@ def scrape_anime_data(anime_name, anime_url=None):
         sequels = process_seasons(anime_data)
         for key, sequel in sequels.items():
             for k, value in sequel.items():
+                sql_title_name = ""
                 if k == "sequel_title" and value:
                     anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(value)
                     processed_anime_name = nautiljon_base_url+ "animes/" + split_string_by_add(value) + ".html"
                     
-                    if value not in anime_data["nautiljon_data"]["sequels"]:
-                        anime_data["nautiljon_data"]["sequels"][value] = {}
-                    anime_data["nautiljon_data"]["sequels"][value]["episodes"] = process_anime_episodes(driver, processed_anime_name)
-
+                    sql_title_name = value
+                if value not in anime_data["nautiljon_data"]["sequels"]:
+                    anime_data["nautiljon_data"]["sequels"][sql_title_name] = {}
+                    
+                  issue here, episodes gets retrieved successfully, sql title name is none when trying to get the episodes but when checking if exists before it doesnt validate the conditions  
+                  
+                  
+                    
+                if k == "sequel_type" and value == "anime" and sql_title_name:
+                    print("printing the sequel name to add episodes: ", sql_title_name)
+                    
+                    anime_data["nautiljon_data"]["sequels"][sql_title_name]["episodes"] = process_anime_episodes(driver, processed_anime_name)
+                 
         return anime_data
 
     except Exception as e:
@@ -328,7 +338,7 @@ def process_sequel_metadata(anime):
     anime_name = anime.get("name")
     if anime_name and anime_name not in anime_to_exclude:
         anime_to_exclude.add(anime_name)
-
+ 
     sequels = anime.get("nautiljon_data", {}).get("sequels", {}).get("sequels_list", [])
     anime_sequels_url = []
 
