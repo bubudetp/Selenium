@@ -18,6 +18,7 @@ from utils.file_operation import write_to_file
 from utils.string_operation import split_string_by_add, extract_number_from_anime_title
 from utils.dict_operation import nautiljon_mapping, dict_map_field_names, genre_translation
 from utils.constants import haikyuu
+from colorama import Fore
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
@@ -58,7 +59,12 @@ def process_genres_and_themes(anime, metadata_lists):
                     translated_texts = translate_genres_or_themes(link_texts)
                     anime["nautiljon_data"][field_name] = translated_texts
 
-def process_anime_episodes(driver, url=None):
+def process_anime_episodes(driver, url=None, anime_type="anime"):
+    print(anime_type, "anime_type in episodes")
+
+    if anime_type != "anime" and anime_type != "oav":
+        return []
+    
     if url:
         print(url, "printing the url")
         driver.get(url)
@@ -71,44 +77,49 @@ def process_anime_episodes(driver, url=None):
     except Exception as e:
         print(f"Error clicking the consent button: {e}")
     
+    try:
+        
+        episode_container_web_element = driver.find_element(By.ID, "episodes")
+        metadata_episodes_container = episode_container_web_element.find_elements(By.TAG_NAME, "tr")
+                
+        episodes = []
+        for episode_container in metadata_episodes_container:
+            metadata_episode = {"episode_number": "", "fr_title": "", "eng_title": "", "pub_date": ""}
+            
+            td_elements = episode_container.find_elements(By.TAG_NAME, "td")
+            
+            if len(td_elements) > 1:
+                metadata_episode["episode_number"] = td_elements[0].text.strip() if td_elements[0].text.strip() else "N/A"
+                
+                try:
+                    fr_title_element = td_elements[1].find_element(By.TAG_NAME, "p")
+                    metadata_episode["fr_title"] = fr_title_element.text.strip() if fr_title_element.text.strip() else "N/A"
+                except Exception as e:
+                    print(f"Error retrieving French title: {e}")
+                
+                try:
+                    en_title_element = td_elements[1].find_element(By.TAG_NAME, "a")
+                    metadata_episode["eng_title"] = en_title_element.text.strip() if en_title_element.text.strip() else "N/A"
+                except Exception as e:
+                    print(f"Error retrieving English title: {e}")
+                
+                try:
+                    date_element = td_elements[-1]
+                    if any(char.isdigit() for char in date_element.text):
+                        metadata_episode["pub_date"] = date_element.text.strip()
+                except Exception as e:
+                    print(f"Error retrieving publication date: {e}")
+            
+            if any(value != "N/A" for value in metadata_episode.values()):
+                episodes.append(metadata_episode)
+            else:
+                print(f"Skipping empty episode :{metadata_episode}")
 
-    episode_container_web_element = driver.find_element(By.ID, "episodes")
-    metadata_episodes_container = episode_container_web_element.find_elements(By.TAG_NAME, "tr")
-            
-    episodes = []
-    for episode_container in metadata_episodes_container:
-        metadata_episode = {"episode_number": "", "fr_title": "", "eng_title": "", "pub_date": ""}
-        
-        td_elements = episode_container.find_elements(By.TAG_NAME, "td")
-        
-        if len(td_elements) > 1:
-            metadata_episode["episode_number"] = td_elements[0].text.strip() if td_elements[0].text.strip() else "N/A"
-            
-            try:
-                fr_title_element = td_elements[1].find_element(By.TAG_NAME, "p")
-                metadata_episode["fr_title"] = fr_title_element.text.strip() if fr_title_element.text.strip() else "N/A"
-            except Exception as e:
-                print(f"Error retrieving French title: {e}")
-            
-            try:
-                en_title_element = td_elements[1].find_element(By.TAG_NAME, "a")
-                metadata_episode["eng_title"] = en_title_element.text.strip() if en_title_element.text.strip() else "N/A"
-            except Exception as e:
-                print(f"Error retrieving English title: {e}")
-            
-            try:
-                date_element = td_elements[-1]
-                if any(char.isdigit() for char in date_element.text):
-                    metadata_episode["pub_date"] = date_element.text.strip()
-            except Exception as e:
-                print(f"Error retrieving publication date: {e}")
-        
-        if any(value != "N/A" for value in metadata_episode.values()):
-            episodes.append(metadata_episode)
-        else:
-            print(f"Skipping empty episode :{metadata_episode}")
+            print("-" * 50)
+    except Exception as e:
+        print(f"Anime is an oav an only has one episode: ", e)
+        return {}
 
-        print("-" * 50)
     return episodes
 
 def process_seasons(anime, existing_titles=None):
@@ -303,20 +314,34 @@ def scrape_anime_data(anime_name, anime_url=None):
         anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(anime_name)
         sequels = process_seasons(anime_data)
         for key, sequel in sequels.items():
+            
+            print("sequel title", sequel)
+            
             sql_title_name = ""
             for k, value in sequel.items():
                 if k == "sequel_title" and value:
                     anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(value)
                     processed_anime_name = nautiljon_base_url+ "animes/" + split_string_by_add(value) + ".html"
-                    
+                    print(value, "sequel titlte")
                     sql_title_name = value
                 if value not in anime_data["nautiljon_data"]["sequels"]:
                     anime_data["nautiljon_data"]["sequels"][sql_title_name] = {}
                     
-                if k == "sequel_type" and value == "anime" and sql_title_name:
-                    print("printing the sequel name to add episodes: ", sql_title_name)
+                if k == "sequel_type" and sql_title_name:
+                    print(Fore.RED + "printing the sequel name to add episodes: ", sql_title_name)
                     
-                    anime_data["nautiljon_data"]["sequels"][sql_title_name]["episodes"] = process_anime_episodes(driver, processed_anime_name)
+                    try:
+                        print(f"Fetching episodes for sequel: {sql_title_name}")
+                        processed_anime_name = nautiljon_base_url + "animes/" + split_string_by_add(sql_title_name) + ".html"
+                        episodes = process_anime_episodes(driver, processed_anime_name, value)
+                        
+                        print(f"Episodes fetched for {sql_title_name}: {episodes}")
+                        anime_data["nautiljon_data"]["sequels"][sql_title_name]["episodes"] = episodes
+                    except Exception as e:
+                        print(f"Error processing sequel {sql_title_name}: {e}")
+                        traceback.print_exc()
+                        continue
+                    
         return anime_data
 
     except Exception as e:
