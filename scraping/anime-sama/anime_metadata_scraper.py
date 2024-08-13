@@ -303,8 +303,8 @@ def scrape_anime_data(anime_name, anime_url=None):
         anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(anime_name)
         sequels = process_seasons(anime_data)
         for key, sequel in sequels.items():
+            sql_title_name = ""
             for k, value in sequel.items():
-                sql_title_name = ""
                 if k == "sequel_title" and value:
                     anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(value)
                     processed_anime_name = nautiljon_base_url+ "animes/" + split_string_by_add(value) + ".html"
@@ -313,15 +313,10 @@ def scrape_anime_data(anime_name, anime_url=None):
                 if value not in anime_data["nautiljon_data"]["sequels"]:
                     anime_data["nautiljon_data"]["sequels"][sql_title_name] = {}
                     
-                  issue here, episodes gets retrieved successfully, sql title name is none when trying to get the episodes but when checking if exists before it doesnt validate the conditions  
-                  
-                  
-                    
                 if k == "sequel_type" and value == "anime" and sql_title_name:
                     print("printing the sequel name to add episodes: ", sql_title_name)
                     
                     anime_data["nautiljon_data"]["sequels"][sql_title_name]["episodes"] = process_anime_episodes(driver, processed_anime_name)
-                 
         return anime_data
 
     except Exception as e:
