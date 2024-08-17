@@ -118,7 +118,7 @@ def process_anime_episodes(driver, url=None, anime_type="anime"):
             print("-" * 50)
     except Exception as e:
         print(f"Anime is an oav an only has one episode: ", e)
-        return {}
+        return []
 
     return episodes
 
@@ -314,34 +314,36 @@ def scrape_anime_data(anime_name, anime_url=None):
         anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(anime_name)
         sequels = process_seasons(anime_data)
         for key, sequel in sequels.items():
-            
-            print("sequel title", sequel)
-            
-            sql_title_name = ""
+            print("Processing sequel:", key)
+            sequel_title_name = ""
             for k, value in sequel.items():
                 if k == "sequel_title" and value:
-                    anime_data["nautiljon_data"]["sequels"]["sequel_list"].add(value)
-                    processed_anime_name = nautiljon_base_url+ "animes/" + split_string_by_add(value) + ".html"
-                    print(value, "sequel titlte")
-                    sql_title_name = value
-                if value not in anime_data["nautiljon_data"]["sequels"]:
-                    anime_data["nautiljon_data"]["sequels"][sql_title_name] = {}
-                    
-                if k == "sequel_type" and sql_title_name:
-                    print(Fore.RED + "printing the sequel name to add episodes: ", sql_title_name)
-                    
+                    sequel_title_name = value
+                    anime_data["nautiljon_data"]["sequels"]["sequel_list"].add((value, True))
+                    anime_data["nautiljon_data"]["sequels"].setdefault(sequel_title_name, {"episodes": []})
+                
+                if k == "sequel_type" and sequel_title_name:
                     try:
-                        print(f"Fetching episodes for sequel: {sql_title_name}")
-                        processed_anime_name = nautiljon_base_url + "animes/" + split_string_by_add(sql_title_name) + ".html"
+                        print(f"Fetching episodes for sequel: {sequel_title_name}")
+                        processed_anime_name = nautiljon_base_url + "animes/" + split_string_by_add(sequel_title_name) + ".html"
                         episodes = process_anime_episodes(driver, processed_anime_name, value)
+                        print(f"Episodes fetched: {episodes}")
+
+                        anime_data["nautiljon_data"]["sequels"][sequel_title_name]["episodes"] = episodes
                         
-                        print(f"Episodes fetched for {sql_title_name}: {episodes}")
-                        anime_data["nautiljon_data"]["sequels"][sql_title_name]["episodes"] = episodes
+                        sql_list = anime_data["nautiljon_data"]["sequels"]["sequel_list"]
+                        
+                        sql_index = sql_list.index(sequel_title_name)
+                        sql_list.insert(sql_index, (sequel_title_name, False))
+                        anime_data["nautiljon_data"]["sequels"]["sequel_list"] = sql_list
+                        
+                        
+                        anime_data["nautiljon_data"]["sequels"][sequel_title_name]["nautiljon_data"] = scrape_anime_data(sequel_title_name, processed_anime_name)
                     except Exception as e:
-                        print(f"Error processing sequel {sql_title_name}: {e}")
+                        print(f"Error processing sequel {sequel_title_name}: {e}")
                         traceback.print_exc()
                         continue
-                    
+        print("returning anime data")
         return anime_data
 
     except Exception as e:
@@ -389,11 +391,13 @@ def process_sequel_metadata(anime):
             print(f"got metadata for {anime_title}")
         else:
             print(f"didnt get metadata for {anime_title}")
+
 try:
     anime = scrape_anime_data("haikyu !!")
-
-    process_sequel_metadata(anime)
-    write_to_file("anime_metadatass.json", anime)
+    write_to_file("x.json", anime)
+    
+    # process_sequel_metadata(anime)
+    # write_to_file("anime_metadatass.json", anime)
     # process related animes
     driver.quit()
 
